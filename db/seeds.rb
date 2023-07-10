@@ -55,3 +55,74 @@ Trail.create(
     trailhead_coordinates: "45.373111905749575, -121.69610755615261"
 )
 
+user1.reviews.create(
+    trail_id: 1,
+    date: "2023-05-10",
+    trail_rating: 4,
+    condition: "Great"
+    content: "I love this trail! Great for the whole family!"
+)
+
+user1.reviews.create(
+    trail_id: 2,
+    date: "2023-05-10",
+    trail_rating: 4,
+    condition: "Muddy"
+    content: "Fun hike but the trail was a bit muddy."
+)
+
+user1.reviews.create(
+    trail_id: 3,
+    date: "2022-08-10",
+    trail_rating: 5,
+    condition: "Great"
+    content: "So hard but totally worth the summit! Can't wait to do it again next year!"
+)
+
+user2.reviews.create(
+    trail_id: 1,
+    date: "2023-06-01",
+    trail_rating: 4,
+    condition: "Great"
+    content: "Lovely! So fun for the kids."
+)
+
+user2.reviews.create(
+    trail_id: 2,
+    date: "2023-04-10",
+    trail_rating: 4,
+    condition: "Muddy"
+    content: "I had so much fun hiking this with my boyfriend. Wonderful view at the top!"
+)
+
+user2.reviews.create(
+    trail_id: 3,
+    date: "2022-08-11",
+    trail_rating: 5,
+    condition: "Great"
+    content: "What a workout!"
+)
+
+user3.reviews.create(
+    trail_id: 1,
+    date: "2023-06-18",
+    trail_rating: 4,
+    condition: "Great"
+    content: "Pretty but short."
+)
+
+user3.reviews.create(
+    trail_id: 2,
+    date: "2023-07-6",
+    trail_rating: 5,
+    condition: "Great"
+    content: "Worth the trip!"
+)
+
+user3.reviews.create(
+    trail_id: 3,
+    date: "2022-09-01",
+    trail_rating: 5,
+    condition: "Great"
+    content: "What an awesome hike. Very challening but definitely worth it."
+)

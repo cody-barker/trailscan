@@ -9,6 +9,15 @@ class SessionsController < ApplicationController
         end
     end
 
+    def show
+        user = User.find_by(id: session[:user_id])
+        if user
+            render json: user, status: :created
+        else
+            render json: {error: "Not authorized"}, status: :unauthorized
+        end
+    end
+
     def destroy
         if session[:user_id]
             session.delete(:user_id)

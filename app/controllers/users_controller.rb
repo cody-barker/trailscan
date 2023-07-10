@@ -35,7 +35,7 @@ rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_resp
     end
 
     def user_params
-        params.permit(:username, :city, :state, :profile_image)
+        params.permit(:name, :city, :state, :profile_image)
     end
 
     def render_user_not_found_resp

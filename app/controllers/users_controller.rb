@@ -7,7 +7,7 @@ rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_resp
         if params[:trail_id]
             trail = Trail.find_by(id: params[:trail_id])
             users = trail.users
-            render json: users, include: :trail
+            render json: users
         else
             render json: User.all
         end
@@ -15,7 +15,7 @@ rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_resp
 
     def show
         user = find_user
-        render json: user, include: :reviews
+        render json: user
     end
 
     def create

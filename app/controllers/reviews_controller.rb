@@ -3,7 +3,7 @@ class ReviewsController < ApplicationController
 
     def index
         reviews = Review.all.order(date: :desc)
-        render json: reviews, include: :trail
+        render json: reviews
     end
 
     def show

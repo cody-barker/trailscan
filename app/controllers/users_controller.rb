@@ -1,8 +1,7 @@
 class UsersController < ApplicationController
 rescue_from ActiveRecord::RecordNotFound, with: :render_user_not_found_resp
 rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_resp
-before_action :authorize
-skip_before_action: authorize,
+#before_action :authorize
 
     def index
         if params[:trail_id]
@@ -47,7 +46,12 @@ skip_before_action: authorize,
     end
 
     def user_params
-        params.permit(:name, :password, :city, :state, :profile_image)
+        params.permit(
+            :name, 
+            :password, 
+            :city, 
+            :state, 
+            :profile_image)
     end
 
     def render_user_not_found_resp

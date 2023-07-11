@@ -15,7 +15,7 @@ rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_resp
 
     def show
         user = find_user
-        render json: user
+        render json: user, include: :reviews
     end
 
     def create

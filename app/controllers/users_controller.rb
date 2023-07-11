@@ -9,7 +9,7 @@ before_action :authorize
             users = trail.users
             render json: users, include: :trail
         else
-        render json: User.all
+            render json: User.all
         end
     end
 

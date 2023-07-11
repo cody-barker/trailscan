@@ -16,7 +16,7 @@ rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_resp
 
     def show
         trail = find_trail
-        render json: trail
+        render json: trail, include: :reviews
     end
 
     def create

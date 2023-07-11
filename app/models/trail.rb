@@ -1,5 +1,5 @@
 class Trail < ApplicationRecord
-    has_many :reviews
+    has_many :reviews, dependent: :delete_all
     has_many :users, through: :reviews
     validates :difficulty, inclusion: {in: ["Easy", "Moderate", "Hard"]}
     validates :length, numericality: {greater_than: 0}

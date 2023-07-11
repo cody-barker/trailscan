@@ -7,7 +7,7 @@ class ReviewsController < ApplicationController
     end
 
     def show
-        review = Review.find(params[:id])
+        review = find_review
         render json: review
     end
 
@@ -19,12 +19,26 @@ class ReviewsController < ApplicationController
         render json: review, status: :created
     end
 
-    
+    def update
+        review = find_review
+        review.update!(review_params)
+        render json: review, status: :accepted
+    end
+
+    def destroy
+        review = find_review
+        review.destroy
+        render json: {}, status: :no_content
+    end
 
     private
 
+    def find_review
+        Review.find(params[:id])
+    end
+
     def review_params
-        params.permit(:user_id, :trail_id, :date, :trail_rating, :condition, :content)
+        params.permit(:review_id, :user_id, :trail_id, :date, :trail_rating, :condition, :content)
     end
 
 end

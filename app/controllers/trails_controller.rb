@@ -45,7 +45,7 @@ rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_resp
 
     def trail_params
         params.permit(
-            :trail_name,
+            :name,
             :average_rating,
             :number_of_reviews,
             :difficulty,

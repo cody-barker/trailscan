@@ -44,7 +44,7 @@ rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_resp
 
     def user_params
         params.permit(
-            :name, 
+            :username, 
             :password,
             :password_confirmation, 
             :city, 

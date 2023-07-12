@@ -1,5 +1,5 @@
 user1 = User.create(
-    name: "Cody Barker",
+    username: "Cody Barker",
     password: "test",
     city: "Portland",
     state: "Oregon",
@@ -7,7 +7,7 @@ user1 = User.create(
     )
 
 user2 = User.create(
-    name: "Kelli Radwanski",
+    username: "Kelli Radwanski",
     password: "test",
     city: "Portland",
     state: "Oregon",
@@ -15,7 +15,7 @@ user2 = User.create(
     )
 
 user3 = User.create(
-    name: "Ben Buckingham",
+    username: "Ben Buckingham",
     password: "test",
     city: "Portland",
     state: "Oregon",
@@ -24,8 +24,6 @@ user3 = User.create(
 
 Trail.create(
     name: "Little Lake",
-    average_rating: nil,
-    number_of_reviews: 0,
     difficulty: "Easy",
     length: 2.3,
     description: "A gentle loop hike around a charming lake.",
@@ -36,8 +34,6 @@ Trail.create(
 
 Trail.create(
     name: "Miner's Peak",
-    average_rating: nil,
-    number_of_reviews: 0,
     difficulty: "Moderate",
     length: 5.1,
     description: "An out-and-back to Miner's peak, full of beautiful views.",
@@ -48,8 +44,6 @@ Trail.create(
 
 Trail.create(
     name: "Devastation Point",
-    average_rating: nil,
-    number_of_reviews: 0,
     difficulty: "Hard",
     length: 9.7,
     description: "A challenging out-and-back to the summit of Devastation Mountain. Not for the fait of heart but worth the stellar view!",

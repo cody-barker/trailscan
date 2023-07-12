@@ -1,5 +1,5 @@
 class UserSerializer < ActiveModel::Serializer
-  attributes :id, :name, :city, :state, :profile_image
+  attributes :id, :username, :city, :state, :profile_image
 
   has_many :reviews
 end

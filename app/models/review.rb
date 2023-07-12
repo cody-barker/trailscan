@@ -28,7 +28,7 @@ class Review < ApplicationRecord
     end
 
     def username
-        self.user.name
+        self.user.username
     end
 
 end

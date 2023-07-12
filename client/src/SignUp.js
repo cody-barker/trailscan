@@ -21,9 +21,14 @@ function SignUp() {
         })
     }
 
+    function onSignUp(e){
+        e.preventDefault()
+        fetch('')
+    }
+
     return(
         <div id="signup-container">
-            <form>
+            <form onSubmit={onSignUp}>
                 <label>
                     Username
                     <input

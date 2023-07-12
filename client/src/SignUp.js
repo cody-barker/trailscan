@@ -23,7 +23,17 @@ function SignUp() {
 
     function onSignUp(e){
         e.preventDefault()
-        fetch('')
+        fetch('/signup', {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                username,
+                password,
+                password_confirmation: passwordConfirmation 
+            })
+        })
     }
 
     return(

@@ -5,13 +5,13 @@ function SignUp() {
     const [inputState, setInputState] = useState({
         username: "",
         password: "",
-        passwordConfirmation: ""
+        passwordConfirmation: "",
     })
 
     const {
         username,
         password,
-        passwordConfirmation
+        passwordConfirmation,
     } = inputState
 
     function onInputChange(e){

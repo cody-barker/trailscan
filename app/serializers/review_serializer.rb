@@ -1,6 +1,6 @@
 class ReviewSerializer < ActiveModel::Serializer
-  attributes :id, :user_id, :trail_id, :trail_rating, :condition, :content
+  attributes :id, :user_id, :trail_id, :trail_rating, :condition, :content, :username
 
-  belongs_to :user
   belongs_to :trail
+  belongs_to :user
 end

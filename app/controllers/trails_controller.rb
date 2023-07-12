@@ -10,7 +10,8 @@ rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_resp
             trails = user.trails
             render json: trails
         else
-            render json: Trail.all
+            trails = Trail.all
+            render json: trails
         end
     end
 
@@ -26,9 +27,14 @@ rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_resp
     end
 
     def update
+        user = User.find_by(id: session[:user_id])
         trail = find_trail
-        trail.update!(trail_params)
-        render json: trail, status: :accepted
+        if user.trails.includes(:id).where('trail.id = ?', 'trail.id')
+            trail.update!(trail_params)
+            render json: trail, status: :accepted
+        else
+            render json: {error: "Not authorized"}, status: :unauthorized
+        end
     end
 
     def destroy

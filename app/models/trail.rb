@@ -8,4 +8,5 @@ class Trail < ApplicationRecord
     validates :dogs_allowed, inclusion: {in: ["Yes", "No"]}
     validates :family_friendly, inclusion: {in: ["Yes", "No"]}
     validates :trailhead_coordinates, length: {maximum: 39}
+
 end

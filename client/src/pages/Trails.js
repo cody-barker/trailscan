@@ -11,20 +11,20 @@ function Trails() {
     }, [])
 
     return(
-        <div className="wrapper">
-            <h1>Welcome to TrailScan</h1>
-            <p>Connecting you to the best trails around!</p>
+     <>
+        <h1>Welcome to TrailScan</h1>
+        <p>Connecting you to the best trails around!</p>
 
-            {trails.length > 0 ? (
-                trails.map((trail) => {
-                    return <TrailCard key={trail.id} trail={trail}/>
-                })
-            ) : (
-                "Loading..."
-            )}
-
-        </div>
+        {trails.length > 0 ? (
+            trails.map((trail) => {
+                return <TrailCard key={trail.id} trail={trail}/>
+            })
+        ) : (
+            "Loading..."
+        )}
+    </>
     )
+    
 }
 
 export default Trails;

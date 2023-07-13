@@ -29,7 +29,8 @@ Trail.create(
     description: "A gentle loop hike around a charming lake.",
     dogs_allowed: "Yes",
     family_friendly: "Yes",
-    trailhead_coordinates: "45.47643118135615, -122.65444792465081"
+    trailhead_coordinates: "45.47643118135615, -122.65444792465081",
+    photo: "https://photos.thedyrt.com/photo/39419/photo/oregon-little-crater-lake-campground_e22fadabdb692a2cf4504f749b3372ea.jpg?auto=webp&width=1482"
 )
 
 Trail.create(
@@ -39,7 +40,8 @@ Trail.create(
     description: "An out-and-back to Miner's peak, full of beautiful views.",
     dogs_allowed: "Yes",
     family_friendly: "No",
-    trailhead_coordinates: "45.41632616732002, -121.94616054112697"
+    trailhead_coordinates: "45.41632616732002, -121.94616054112697",
+    photo: "https://oregonwild.org/sites/default/files/featured-imgs/ZipMt.Jefferson.jpg"
 )
 
 Trail.create(
@@ -49,7 +51,8 @@ Trail.create(
     description: "A challenging out-and-back to the summit of Devastation Mountain. Not for the fait of heart but worth the stellar view!",
     dogs_allowed: "No",
     family_friendly: "No",
-    trailhead_coordinates: "45.373111905749575, -121.69610755615261"
+    trailhead_coordinates: "45.373111905749575, -121.69610755615261",
+    photo: "https://hikingproject.com/assets/photos/hike/7049528_medium_1555541583.jpg?cache=1688773247"
 )
 
 user1.reviews.create(

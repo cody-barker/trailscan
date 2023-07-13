@@ -57,7 +57,8 @@ rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_resp
             :description,
             :dogs_allowed,
             :family_friendly,
-            :trailhead_coordinates)
+            :trailhead_coordinates,
+            :photo)
     end
 
     def render_trail_not_found_resp

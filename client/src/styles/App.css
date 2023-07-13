@@ -1,5 +1,5 @@
 .App {
-  text-align: center;
+  /* text-align: center; */
 }
 
 .App-logo {
@@ -28,11 +28,23 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+img {
+  max-width: 300px;
+  width: auto;
+  max-width: 100%
 }
+
+.trail-card {
+  text-align: center;
+  border: grey solid 1px;
+  padding: .5rem;
+  width: 20rem;
+  height: 30rem;
+  display: inline-grid;
+  margin: 0.5rem 0.5rem;
+  box-shadow: 3px 4px #3b3b3b;
+}
+
+
+

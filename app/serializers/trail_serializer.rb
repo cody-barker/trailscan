@@ -1,5 +1,5 @@
 class TrailSerializer < ActiveModel::Serializer
-  attributes :id, :name, :difficulty, :length, :description, :dogs_allowed, :family_friendly, :trailhead_coordinates
+  attributes :id, :name, :difficulty, :length, :description, :dogs_allowed, :family_friendly, :trailhead_coordinates, :photo
 
   has_many :reviews
   # has_many :users

@@ -27,7 +27,7 @@ function App() {
         <Routes>
           <Route 
             path="/" 
-            element={<Trails/>}/>
+            element={<Trails user={user}/>}/>
           <Route 
             path="/signup"
             element={<SignUp />}/>

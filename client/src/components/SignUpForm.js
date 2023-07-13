@@ -82,7 +82,7 @@ function SignUp({ onLogin }) {
                 ></input>
             </label>
 
-            <button type="submit">{isLoading? "Loading..." : "Sign Up"}</button>
+            <button className="login-btn" type="submit">{isLoading? "Loading..." : "Sign Up"}</button>
             <div className="errors-div">
                 {errors.map((err) => (
                     <Error key={err}>{err}</Error>

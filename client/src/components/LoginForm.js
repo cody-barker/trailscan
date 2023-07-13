@@ -49,7 +49,7 @@ function LoginForm ({ onLogin }) {
                 ></input>
             </label>
 
-            <button type="submit">{isLoading? "Loading..." : "Login"}</button>
+            <button className="login-btn" type="submit">{isLoading? "Loading..." : "Login"}</button>
 
                 {/* {errors.map((err) => (
                     <Error key={err}>{err}</Error>

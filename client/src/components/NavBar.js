@@ -19,10 +19,10 @@ function NavBar({setUser}) {
                 <Link to="/">TrailScan</Link>
             </h1>
             <nav>
-                <button as={Link} to="/new">
+                <button className="nav-btn" as={Link} to="/new">
                     New Trail
                 </button>
-                <button onClick={handleLogout}>
+                <button className="nav-btn" onClick={handleLogout}>
                     Logout
                 </button>
             </nav>

@@ -16,10 +16,12 @@ function TrailCard({ trail }) {
         <div className="trail-card">
             <a href={`/trails/${id}`}>
             <img src={photo} alt="trail"></img>
-            </a>
+            <span>{difficulty}</span>
+            <span> • </span>
+            <span id="star">{'\u2605'}</span>
             <h3>{name}</h3>
-            <p>{length} miles</p>
-            <p>Difficulty: {difficulty}</p>
+            <p>Length: {length} mi</p>
+            </a>
         </div>
     )
 }

@@ -14,7 +14,7 @@ function Trails() {
      <>
         <h1>Welcome to TrailScan</h1>
         <p>Connecting you to the best trails around!</p>
-
+        <div className="card-container">
         {trails.length > 0 ? (
             trails.map((trail) => {
                 return <TrailCard key={trail.id} trail={trail}/>
@@ -22,6 +22,7 @@ function Trails() {
         ) : (
             "Loading..."
         )}
+        </div>
     </>
     )
     

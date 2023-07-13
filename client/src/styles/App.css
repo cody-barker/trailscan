@@ -1,5 +1,5 @@
 .App {
-  /* text-align: center; */
+  text-align: center;
 }
 
 .App-logo {
@@ -30,21 +30,86 @@
 
 
 img {
-  max-width: 300px;
-  width: auto;
-  max-width: 100%
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 15px;
 }
 
 .trail-card {
-  text-align: center;
-  border: grey solid 1px;
-  padding: .5rem;
+  text-align: left;
+  margin: 8px;
   width: 20rem;
-  height: 30rem;
-  display: inline-grid;
-  margin: 0.5rem 0.5rem;
-  box-shadow: 3px 4px #3b3b3b;
+  height: 20rem;
+  display: inline-block;
+  font-size: 14px;
+  color: rgb(27, 49, 15);
 }
+
+p {
+  margin: 0px;
+  padding: 0px;
+  font-family: Manrope,Arial,sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+h3 {
+  margin: 0px;
+}
+
+.card-container {
+  display: flex;
+  object-fit: cover;
+}
+
+#star {
+  color: rgb(44, 214, 44);
+  font-size: 16px;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: inherit;
+}
+
+nav {
+  display: flex;
+  padding: 10px;
+}
+
+.nav-btn {
+  cursor: pointer;
+  border: 0px;
+  background-color: transparent;
+  color: rgb(27, 49, 15);
+  padding: 10px;
+  margin: 10px;
+}
+
+
+input {
+  width: 100%;
+  padding: 3px;
+  margin: 5px;
+  box-sizing: border-box;
+  display: inline-block;
+}
+
+form {
+  padding: 10px;
+  width: 200px;
+  color: #2c580f;
+}
+
+button {
+  
+}
+
+
 
 
 

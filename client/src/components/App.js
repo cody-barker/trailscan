@@ -3,7 +3,7 @@ import {Routes, Route} from 'react-router-dom'
 import NavBar from './NavBar'
 import Login from '../pages/Login'
 import SignUp from './SignUpForm'
-import Home from '../pages/Home'
+import Trails from '../pages/Trails'
 import '../styles/App.css';
 
 function App() {
@@ -22,12 +22,12 @@ function App() {
 
   return (
     <>
-      <NavBar user={user} setUser={setUser}/>
+      <NavBar setUser={setUser}/>
       <main>
         <Routes>
           <Route 
             path="/" 
-            element={<Home/>}/>
+            element={<Trails/>}/>
           <Route 
             path="/signup"
             element={<SignUp />}/>

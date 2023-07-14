@@ -10,8 +10,6 @@ function TrailDetail( {trails} ) {
         return <p>"Loading..."</p>
     }
 
-    console.log(trail)
-
     return(
         <>
         <div className="header-container">

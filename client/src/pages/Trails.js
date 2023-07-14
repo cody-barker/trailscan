@@ -1,7 +1,7 @@
-import {useEffect, useState} from 'react'
+import React from 'react'
 import TrailCard from '../components/TrailCard'
 
-function Trails({ user, trails, setTrails }) {
+function Trails({ user, setUser, trails, setTrails }) {
 
     const today = new Date()
     const curHr = today.getHours()
@@ -14,8 +14,6 @@ function Trails({ user, trails, setTrails }) {
       } else {
         greeting = 'Good evening'
       }
-
-    
 
     return(
      <>

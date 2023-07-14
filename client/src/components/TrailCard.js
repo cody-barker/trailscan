@@ -1,4 +1,5 @@
 import React from 'react'
+import {NavLink} from 'react-router-dom'
 
 function TrailCard({ trail }) {
 
@@ -14,7 +15,8 @@ function TrailCard({ trail }) {
 
     return(
         <div className="trail-card">
-            <a href={`/trails/${id}`}>
+            
+            <NavLink to={`/trails/${id}`}>
             <img src={photo} alt="trail"></img>
             <span>{difficulty}</span>
             <span> • </span>
@@ -23,7 +25,8 @@ function TrailCard({ trail }) {
             <span className="grey"> ({number_of_reviews})</span>
             <h3>{name}</h3>
             <p>Length: {length} mi</p>
-            </a>
+            </NavLink>
+          
         </div>
     )
 }

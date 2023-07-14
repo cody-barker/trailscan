@@ -1,7 +1,10 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 function NavBar({setUser}) {
+
+    const navigate = useNavigate()
+
     function handleLogout() {
         fetch("/logout", {
             method: "DELETE"
@@ -9,6 +12,7 @@ function NavBar({setUser}) {
         .then((r) => {
             if (r.ok) {
                 setUser(null)
+                navigate("/")
             }
         })
     }

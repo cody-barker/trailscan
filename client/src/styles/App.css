@@ -157,6 +157,9 @@ form {
   color: grey
 }
 
+.errors {
+  color: red;
+}
 
 
 

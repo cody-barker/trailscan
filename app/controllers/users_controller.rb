@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 rescue_from ActiveRecord::RecordNotFound, with: :render_user_not_found_resp
 rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_resp
-#before_action :authorize
+# before_action :authorize
 
     def index
         if params[:trail_id]
@@ -20,7 +20,7 @@ rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_resp
 
     def create
         user = User.create!(user_params)
-        session[:user_id] == user.id
+        session[:user_id] = user.id
         render json: user, status: :created
     end
 

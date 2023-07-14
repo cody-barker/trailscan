@@ -7,10 +7,10 @@ function TrailCard({ trail }) {
         name,
         difficulty,
         length,
-        photo
+        photo,
+        number_of_reviews,
+        average_rating
     } =  trail
-
-    console.log(trail)
 
     return(
         <div className="trail-card">
@@ -19,6 +19,8 @@ function TrailCard({ trail }) {
             <span>{difficulty}</span>
             <span> • </span>
             <span id="star">{'\u2605'}</span>
+            <span> {average_rating}</span>
+            <span className="grey"> ({number_of_reviews})</span>
             <h3>{name}</h3>
             <p>Length: {length} mi</p>
             </a>

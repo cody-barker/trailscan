@@ -1,8 +1,8 @@
 import {useEffect, useState} from 'react'
 import TrailCard from '../components/TrailCard'
 
-function Trails({ user }) {
-    const [trails, setTrails] = useState([])
+function Trails({ user, trails, setTrails }) {
+
     const today = new Date()
     const curHr = today.getHours()
     let greeting;
@@ -15,11 +15,7 @@ function Trails({ user }) {
         greeting = 'Good evening'
       }
 
-    useEffect(() => {
-        fetch("/trails")
-        .then((r) => r.json())
-        .then((trails) => setTrails(trails))
-    }, [])
+    
 
     return(
      <>

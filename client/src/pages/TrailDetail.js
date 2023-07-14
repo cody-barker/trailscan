@@ -1,4 +1,5 @@
 import { useParams } from 'react-router-dom'
+import Review from '../components/Review'
 
 function TrailDetail( {trails} ) {
     let {id} = useParams()
@@ -28,6 +29,13 @@ function TrailDetail( {trails} ) {
             <h3>Description</h3>
             <p>{trail.description}</p>
             <h3>Reviews</h3>
+                {trail? (
+                    trail.reviews.map((review) => {
+                        return <Review key={review.id} review={review}/>
+                    })
+                ) : (
+                    <p>"Loading..."</p>
+                )}
         </div>
         </>
     )

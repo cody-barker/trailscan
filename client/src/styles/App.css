@@ -78,19 +78,23 @@ a:visited {
   color: inherit;
 }
 
-nav {
+#navbar {
   display: flex;
-  padding: 10px;
+  padding-left: 15px;
+  border-bottom: 1px solid grey;
+  height: 60px;
+  align-items: center;
+  object-fit: contain;
 }
 
 .nav-btn {
   cursor: pointer;
   font-weight: bolder;
-  border: 0px;
+  border: 0px black solid;
   background-color: transparent;
   color: rgb(27, 49, 15);
-  padding: 10px;
-  margin: 10px;
+  padding: 7px;
+  margin: 7px;
 }
 
 
@@ -119,10 +123,11 @@ form {
   width: 100%;
   height: 320px;
   border-radius: 0px;
-  object-fit: cover;
 }
 
 #trail-header-photo{
+  margin-top: 20px;
+  margin-bottom: 20px;
   width: 90%;
   height: 320px;
   object-fit: cover;
@@ -161,6 +166,23 @@ form {
   color: red;
 }
 
+.trail-details-container {
+  padding-left: 50px;
+  margin-bottom: 30px;
+}
 
+.reviews {
+  padding-left: 50px;
+}
+
+.logo {
+  margin-right: 20px;
+}
+
+.logo-img {
+  width: 30px;
+  height: auto;
+  margin-right: 5px;
+}
 
 

@@ -18,6 +18,7 @@ function TrailDetail( {trails} ) {
             </div>
             <div className="trail-header-text">{trail.name}</div>
         </div>
+    
         <div className="trail-details-container">
             <p>Length: {trail.length}</p>
             <p>Difficulty: {trail.difficulty}</p>
@@ -26,6 +27,8 @@ function TrailDetail( {trails} ) {
             <p>Dogs Allowed: {trail.dogs_allowed}</p>
             <h3>Description</h3>
             <p>{trail.description}</p>
+        </div>
+            <div className="reviews">
             <h3>Reviews</h3>
                 {trail? (
                     trail.reviews.map((review) => {
@@ -34,7 +37,8 @@ function TrailDetail( {trails} ) {
                 ) : (
                     <p>"Loading..."</p>
                 )}
-        </div>
+            </div>
+        
         </>
     )
 }

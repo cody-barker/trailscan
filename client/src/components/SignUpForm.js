@@ -1,10 +1,12 @@
-import React, {useState} from 'react'
+import React, {useState, useContext} from 'react'
 import Error from './Error'
+import {UserContext} from '../contexts/UserContext'
 
-function SignUp({ setUser }) {
+function SignUp() {
 
     const [errors, setErrors] = useState([]);
     const [isLoading, setisLoading] = useState(false);
+    const {setUser} = useContext(UserContext)
 
     const [inputState, setInputState] = useState({
         username: "",

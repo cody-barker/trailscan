@@ -1,11 +1,13 @@
-import React, {useState } from 'react'
+import React, {useState, useContext} from 'react'
 import Error from './Error'
+import { UserContext } from '../contexts/UserContext'
 
-function LoginForm ({ setUser }) {
+function LoginForm () {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [errors, setErrors] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
+    const {setUser} = useContext(UserContext)
 
     function handleSubmit(e){
         e.preventDefault()

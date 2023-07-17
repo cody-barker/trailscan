@@ -1,9 +1,11 @@
-import React from 'react'
+import {useContext} from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import {UserContext} from '../contexts/UserContext'
 
-function NavBar({setUser}) {
+function NavBar() {
 
     const navigate = useNavigate()
+    const {setUser} = useContext(UserContext)
 
     function handleLogout() {
         fetch("/logout", {

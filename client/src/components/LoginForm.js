@@ -1,7 +1,7 @@
 import React, {useState } from 'react'
 import Error from './Error'
 
-function LoginForm ({ onLogin }) {
+function LoginForm ({ setUser }) {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [errors, setErrors] = useState([]);
@@ -19,7 +19,7 @@ function LoginForm ({ onLogin }) {
         }).then((r) => {
             setIsLoading(false)
             if (r.ok) {
-                r.json().then((user) => onLogin(user))
+                r.json().then((user) => setUser(user))
             } else {
                 r.json().then((err) => setErrors(err.errors))
             }

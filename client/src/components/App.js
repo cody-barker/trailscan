@@ -29,7 +29,7 @@ function App() {
   console.log(user)
 
   if (!user) {
-    return <Login onLogin={setUser} />
+    return <Login setUser={setUser} />
   }
 
   return (
@@ -41,7 +41,7 @@ function App() {
               element={<TrailDetail trails={trails} setTrails={setTrails}/>}/>
             <Route 
               path="/login"
-              element={<Login onLogin={setUser}/>}/>
+              element={<Login setUser={setUser}/>}/>
             <Route 
               path="/" 
               element={<Trails user={user} setUser={setUser} trails={trails} setTrails={setTrails}/>}/>

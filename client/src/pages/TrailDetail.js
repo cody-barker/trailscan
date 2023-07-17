@@ -20,11 +20,11 @@ function TrailDetail( {trails} ) {
         </div>
     
         <div className="trail-details-container">
-            <p>Length: {trail.length}</p>
-            <p>Difficulty: {trail.difficulty}</p>
+            <span className="detail">Length: {trail.length} mi</span>
+            <span className="detail">Difficulty: {trail.difficulty}</span>
+            <span className="detail">Family Friendly: {trail.family_friendly}</span>
+            <span className="detail">Dogs Allowed: {trail.dogs_allowed}</span>
             <p>Trailhead Coordinates: {trail.trailhead_coordinates}</p>
-            <p>Family Friendly: {trail.family_friendly}</p>
-            <p>Dogs Allowed: {trail.dogs_allowed}</p>
             <h3>Description</h3>
             <p>{trail.description}</p>
         </div>

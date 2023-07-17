@@ -20,11 +20,7 @@ function NavBar({setUser}) {
     return(
         <nav id="navbar">
           <Link to="/"><img className="logo-img" src="https://i.imgur.com/h8odfzA.png" alt="logo"></img></Link>
-          <Link to="/">
-            <h2 className="logo">TrailScan</h2>
-          </Link>      
-               
-            
+          <Link to="/"><h2 className="logo">TrailScan</h2></Link>      
             <button className="nav-btn" as={Link} to="/new">
                 New Trail
             </button>

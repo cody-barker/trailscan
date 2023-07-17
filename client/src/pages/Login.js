@@ -2,7 +2,7 @@ import { useState } from 'react'
 import LoginForm from '../components/LoginForm'
 import SignUpForm from '../components/SignUpForm'
 
-function Login ({ onLogin }) {
+function Login ({ setUser }) {
     const [showLogin, setShowLogin] = useState(true)
 
     return (
@@ -10,7 +10,7 @@ function Login ({ onLogin }) {
             <h1>TrailScan</h1>
             {showLogin ? (
                 <>
-                    <LoginForm onLogin={onLogin} />
+                    <LoginForm setUser={setUser} />
                     <hr></hr>
                     <p>
                         Don't have an account? &nbsp;
@@ -21,7 +21,7 @@ function Login ({ onLogin }) {
                 </>
             ) : (
                 <>
-                    <SignUpForm onLogin={onLogin} />
+                    <SignUpForm setUser={setUser} />
                     <hr></hr>
                     <p>
                         Already have an account? &nbsp;

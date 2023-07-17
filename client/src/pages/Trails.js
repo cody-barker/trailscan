@@ -1,7 +1,7 @@
 import React from 'react'
 import TrailCard from '../components/TrailCard'
 
-function Trails({ user, setUser, trails, setTrails }) {
+function Trails({ user, trails}) {
 
     const today = new Date()
     const curHr = today.getHours()

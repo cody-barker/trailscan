@@ -44,7 +44,7 @@ function App() {
               element={<Login setUser={setUser}/>}/>
             <Route 
               path="/" 
-              element={<Trails user={user} setUser={setUser} trails={trails} setTrails={setTrails}/>}/>
+              element={<Trails user={user} trails={trails}/>}/>
           </Routes>
       </main>
   );

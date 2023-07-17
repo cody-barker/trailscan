@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import Error from './Error'
 
-function SignUp({ onLogin }) {
+function SignUp({ setUser }) {
 
     const [errors, setErrors] = useState([]);
     const [isLoading, setisLoading] = useState(false);
@@ -42,7 +42,7 @@ function SignUp({ onLogin }) {
         }).then((r) => {
             setisLoading(false)
             if (r.ok) {
-                r.json().then((user) => onLogin(user))
+                r.json().then((user) => setUser(user))
             } else {
                 r.json().then((err) => setErrors(err.errors))
             }

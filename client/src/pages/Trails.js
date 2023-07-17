@@ -1,8 +1,10 @@
 import { useContext } from 'react'
 import TrailCard from '../components/TrailCard'
 import { UserContext } from '../contexts/UserContext'
+import { TrailsContext } from '../contexts/TrailsContext'
 
-function Trails({trails}) {
+function Trails() {
+    const {trails} = useContext(TrailsContext)
     const {user} = useContext(UserContext)
     const today = new Date()
     const curHr = today.getHours()

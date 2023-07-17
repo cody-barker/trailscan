@@ -1,7 +1,10 @@
 import { useParams } from 'react-router-dom'
+import { useContext } from 'react'
 import Review from '../components/Review'
+import { TrailsContext } from '../contexts/TrailsContext'
 
-function TrailDetail( {trails} ) {
+function TrailDetail() {
+    const {trails} = useContext(TrailsContext)
     let {id} = useParams()
     id = parseInt(id)
     const trail = trails.find((t) => t.id === id)

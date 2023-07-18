@@ -14,9 +14,6 @@ function UserProfileReview({ review }) {
         trailname
     } = review
 
-    console.log(user)
-    let newReviews;
-
     function handleDelete() {
         fetch(`/reviews/${id}`, {
             method: "DELETE"

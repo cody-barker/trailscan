@@ -212,3 +212,12 @@ span.detail {
   margin: 5px;
 }
 
+.review-edit-form {
+  width: 500px;
+}
+
+.review-text-box{
+  height: 300px;
+  width: 500px;
+}
+

@@ -24,7 +24,7 @@ function App() {
         <NavBar />
           <Routes>
             <Route 
-            path="/user/:id/reviews/:id/edit"
+            path="/user/:uid/reviews/:id/edit"
             element={<EditReviewPage />}
             />
             <Route

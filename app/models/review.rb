@@ -31,4 +31,8 @@ class Review < ApplicationRecord
         self.user.username
     end
 
+    def trailname
+        self.trail.name
+    end
+
 end

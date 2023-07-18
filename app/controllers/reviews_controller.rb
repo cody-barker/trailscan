@@ -1,4 +1,6 @@
 class ReviewsController < ApplicationController
+rescue_from ActiveRecord::RecordNotFound, with: :render_user_not_found_resp
+rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_resp
 
     def index
         reviews = Review.all.order(date: :desc)
@@ -37,7 +39,15 @@ class ReviewsController < ApplicationController
     end
 
     def review_params
-        params.permit(:review_id, :user_id, :trail_id, :date, :trail_rating, :condition, :content)
+        params.permit(:id, :review_id, :user_id, :trail_id, :date, :trail_rating, :condition, :content)
+    end
+
+    def render_unprocessable_entity_resp(e)
+        render json: {errors: e.record.errors.full_messages}, status: :unprocessable_entity
+    end
+
+    def render_review_not_found_resp
+        render json: {error: "Review not found."}, status: :not_found
     end
 
 end

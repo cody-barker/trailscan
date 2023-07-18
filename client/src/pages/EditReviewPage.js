@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import { UserContext } from '../contexts/UserContext'
 import Error from '../components/Error'
 
@@ -10,6 +10,8 @@ function EditReviewPage() {
     const [errors, setErrors] = useState([])
     let {id} = useParams()
     id = parseInt(id)
+    const navigate = useNavigate()
+
     const review = user.reviews.find((review) => {
         return review.id === id
     })
@@ -52,13 +54,16 @@ function EditReviewPage() {
         .then(r => {
             if (r.ok) {
                 r.json().then(updatedReview => {
-                    setUser({...user.reviews.map((review) => {
-                        if (review.id === id) {
-                            return updatedReview
-                        } else {
-                            return review
-                        }
-                    })})
+                    setUser({...user,
+                        reviews: [...user.reviews.map((review) => {
+                             if (review.id === id) {
+                                return updatedReview
+                            } else {
+                                return review
+                            }
+                        })]
+                    })
+                    navigate(`/user/${user.id}/reviews`)
                 })
             } else {
                 r.json().then((err) => setErrors(err.errors))
@@ -66,7 +71,6 @@ function EditReviewPage() {
         })
     }
 
-    console.log(review)
     return(
         <div>
             <form className="review-edit-form" onSubmit={handleSubmit}>

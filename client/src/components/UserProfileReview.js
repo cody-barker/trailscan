@@ -1,14 +1,33 @@
-import React from 'react'
+import { useContext } from 'react'
+import { UserContext } from '../contexts/UserContext'
 
 function UserProfileReview({ review }) {
 
+    const {user, setUser} = useContext(UserContext)
+
     const {
+        id,
         trail_rating,
         condition,
         content,
         formatted_date,
         trailname
     } = review
+
+    console.log(user)
+    let newReviews;
+
+    function handleDelete() {
+        fetch(`/reviews/${id}`, {
+            method: "DELETE"
+        })
+       .then(setUser({
+            ...user,
+            reviews: user.reviews.filter((review) => {
+                return review.id !== id
+            })}
+        ))
+    }
 
     return(
         <div>
@@ -17,6 +36,8 @@ function UserProfileReview({ review }) {
             <p>Rating: {trail_rating}/5</p>
             <p>Conditions: {condition}</p>
             <p>{content}</p>
+            <button>Edit</button>
+            <button onClick={handleDelete}>Delete</button>
             <hr></hr>
         </div>
     )

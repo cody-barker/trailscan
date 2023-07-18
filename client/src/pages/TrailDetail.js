@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom'
 import { useContext } from 'react'
-import Review from '../components/Review'
+import TrailReview from '../components/TrailReview'
 import { TrailsContext } from '../contexts/TrailsContext'
 
 function TrailDetail() {
@@ -35,7 +35,7 @@ function TrailDetail() {
             <h3>Reviews</h3>
                 {trail? (
                     trail.reviews.map((review) => {
-                        return <Review key={review.id} review={review}/>
+                        return <TrailReview key={review.id} review={review}/>
                     })
                 ) : (
                     <p>"Loading..."</p>

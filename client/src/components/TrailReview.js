@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Review({ review }) {
+function TrailReview({ review }) {
 
     const {
         trail_rating,
@@ -21,4 +21,4 @@ function Review({ review }) {
     )
 }
 
-export default Review
+export default TrailReview

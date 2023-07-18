@@ -1,5 +1,6 @@
 import { useContext } from 'react'
 import { UserContext } from '../contexts/UserContext'
+import Review from '../components/TrailReview'
 
 
 function UserProfile() {
@@ -12,11 +13,21 @@ function UserProfile() {
     } = user
 
     return(
+        <>
         <div>
-            <img className="profile-photo" src={profile_image} alt="profile photo"></img>
+            <img className="profile-photo" src={profile_image} alt="profile"></img>
             <h3>{username}</h3>
             <p>{city}, {state}</p>
         </div>
+        <hr></hr>
+        <div>
+            <h3>Reviews</h3>
+           {user.reviews.map((review) => {
+                return <Review key={review.id} review={review}/>
+            })}
+        </div>
+        </>
+
 
     )
 }

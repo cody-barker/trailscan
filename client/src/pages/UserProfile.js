@@ -1,6 +1,6 @@
 import { useContext } from 'react'
 import { UserContext } from '../contexts/UserContext'
-import UserProfileReview from '../components/UserProfileReview.js'
+import UserTrailReview from '../components/UserTrailReview.js'
 
 
 function UserProfile() {
@@ -23,7 +23,7 @@ function UserProfile() {
         <div>
             <h3>Reviews</h3>
            {user.reviews.map((review) => {
-                return <UserProfileReview key={review.id} review={review}/>
+                return <UserTrailReview key={review.id} review={review}/>
             })}
         </div>
         </>

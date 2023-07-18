@@ -2,7 +2,7 @@ import { useContext } from 'react'
 import { UserContext } from '../contexts/UserContext'
 import { NavLink } from 'react-router-dom'
 
-function UserProfileReview({ review }) {
+function UserTrailReview({ review }) {
 
     const {user, setUser} = useContext(UserContext)
 
@@ -41,4 +41,4 @@ function UserProfileReview({ review }) {
     )
 }
 
-export default UserProfileReview
+export default UserTrailReview

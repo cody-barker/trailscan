@@ -221,3 +221,19 @@ span.detail {
   width: 500px;
 }
 
+.green-btn {
+  border-radius: 30px;
+  width: 130px;
+  height: 50px;
+  background-color: darkgreen;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition-duration: 0.5s;
+}
+
+.green-btn:hover {
+  background-color:rgb(23, 71, 23);
+  transition-duration: 0.5s;
+}
+

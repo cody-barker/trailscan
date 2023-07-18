@@ -4,7 +4,7 @@ import { UserContext } from '../contexts/UserContext'
 import Error from '../components/Error'
 
 
-function EditReviewPage() {
+function ReviewEdit() {
 
     const {user, setUser} = useContext(UserContext)
     const [errors, setErrors] = useState([])
@@ -126,4 +126,4 @@ function EditReviewPage() {
     )
 }
 
-export default EditReviewPage
+export default ReviewEdit

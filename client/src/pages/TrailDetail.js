@@ -33,6 +33,7 @@ function TrailDetail() {
         </div>
             <div className="reviews">
             <h3>Reviews</h3>
+            <button className="green-btn">Write Review</button>
                 {trail? (
                     trail.reviews.map((review) => {
                         return <TrailReview key={review.id} review={review}/>

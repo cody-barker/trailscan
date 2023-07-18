@@ -204,3 +204,11 @@ span.detail {
   border-radius: 50%;
 }
 
+.underline {
+  text-decoration: underline;
+  font-style: normal;
+  cursor: pointer;
+  display: inline;
+  margin: 5px;
+}
+

@@ -8,6 +8,7 @@ import '../styles/App.css';
 import { UserContext } from '../contexts/UserContext'
 import { TrailsProvider } from '../contexts/TrailsContext'
 import UserProfile from '../pages/UserProfile'
+import EditReviewPage from '../pages/EditReviewPage'
 
 function App() {
   const {user} = useContext(UserContext)
@@ -22,6 +23,10 @@ function App() {
       <main>
         <NavBar />
           <Routes>
+            <Route 
+            path="/user/:id/reviews/:id/edit"
+            element={<EditReviewPage />}
+            />
             <Route
               path="/user/:id/reviews"
               element={<UserProfile />}

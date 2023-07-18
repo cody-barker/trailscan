@@ -1,6 +1,8 @@
 class ReviewsController < ApplicationController
 rescue_from ActiveRecord::RecordNotFound, with: :render_user_not_found_resp
 rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_resp
+before_action :authorize
+skip_before_action :authorize, only: [:index, :show]
 
     def index
         reviews = Review.all.order(date: :desc)
@@ -16,7 +18,7 @@ rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_resp
     #create with user.reviews.create to associate with user
     def create
         user = User.find_by(id: session[:user_id])
-        user.reviews.create!(review_params)
+        review = user.reviews.create!(review_params)
         render json: review, status: :created
     end
 
@@ -48,6 +50,10 @@ rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_resp
 
     def render_review_not_found_resp
         render json: {error: "Review not found."}, status: :not_found
+    end
+
+    def authorize
+        render json: {error: "Not authorized."}, status: :unauthorized unless session[:user_id]
     end
 
 end

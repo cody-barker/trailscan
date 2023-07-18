@@ -1,7 +1,8 @@
 class TrailsController < ApplicationController
 rescue_from ActiveRecord::RecordNotFound, with: :render_trail_not_found_resp
 rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_resp
-#before_action :authorize
+before_action :authorize
+skip_before_action :authorize, only: [:index, :show]
 
     def index
         if params[:user_id]
@@ -66,6 +67,10 @@ rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_resp
 
     def render_unprocessable_entity_resp(e)
         render json: {errors: e.record.errors.full_messages}, status: :unprocessable_entity
+    end
+
+    def authorize
+        render json: {error: "Not authorized."}, status: :unauthorized unless session[:user_id]
     end
 
     def authorize

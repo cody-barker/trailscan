@@ -9,6 +9,7 @@ import { UserContext } from '../contexts/UserContext'
 import { TrailsProvider } from '../contexts/TrailsContext'
 import UserProfile from '../pages/UserProfile'
 import ReviewEdit from '../pages/ReviewEdit'
+import ReviewCreate from '../pages/ReviewCreate'
 
 function App() {
   const {user} = useContext(UserContext)
@@ -28,6 +29,10 @@ function App() {
             <Route
               path="/user/:id/reviews"
               element={<UserProfile />}
+            />
+            <Route
+            path="/trails/:id/reviews"
+            element={<ReviewCreate />}
             />
             <Route
               path="/trails/:id"

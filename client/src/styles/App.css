@@ -222,6 +222,7 @@ span.detail {
 }
 
 .green-btn {
+  float: right;
   border-radius: 30px;
   width: 130px;
   height: 50px;

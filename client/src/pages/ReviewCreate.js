@@ -1,26 +1,29 @@
 import { useContext, useState } from 'react'
-import { useParams, useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
+import { TrailsContext } from '../contexts/TrailsContext'
 import { UserContext } from '../contexts/UserContext'
 import Error from '../components/Error'
 
+function ReviewCreate() {
 
-function ReviewEdit() {
-
-    const {user, setUser} = useContext(UserContext)
-    const [errors, setErrors] = useState([])
     let {id} = useParams()
     id = parseInt(id)
-    const navigate = useNavigate()
-
-    const review = user.reviews.find((review) => {
-        return review.id === id
+    const {trails} = useContext(TrailsContext)
+    const {user, setUser} = useContext(UserContext)
+    const trail = trails.find((trail) => {
+        return trail.id === id
     })
+    const [errors, setErrors] = useState([])
+    const navigate = useNavigate()
+    const today = new Date()
+    today.setDate(today.getDate())
+    const formattedToday = today.toISOString().substring(0,10)
 
     const [inputState, setInputState] = useState({
-        trailRating: review.trail_rating,
-        date: review.date,
-        condition: review.condition,
-        content: review.content
+        trailRating: "",
+        date: formattedToday,
+        condition: "",
+        content: ""
     })
 
     const {
@@ -37,12 +40,12 @@ function ReviewEdit() {
         })
     }
 
-    function handleSubmit(e) {
+    function handleSubmit(e){
         e.preventDefault()
-        fetch(`/reviews/${id}`, {
-            method: "PATCH",
+        fetch(`/trails/${id}/reviews`, {
+            method: "POST",
             headers: {
-                'Content-Type': 'application/json'
+                "Content-Type" : "application/json"
             },
             body: JSON.stringify({
                 trail_rating: trailRating,
@@ -53,18 +56,15 @@ function ReviewEdit() {
         })
         .then(r => {
             if (r.ok) {
-                r.json().then(updatedReview => {
-                    setUser({...user,
-                        reviews: [...user.reviews.map((review) => {
-                             if (review.id === id) {
-                                return updatedReview
-                            } else {
-                                return review
-                            }
-                        })]
+                r.json().then(newReview => {
+                    setUser({
+                        ...user,
+                        reviews: [
+                            newReview, ...user.reviews
+                        ]
                     })
                     setErrors([])
-                    navigate(`/user/${user.id}/reviews`)
+                    navigate(`/trails/${id}`)
                 })
             } else {
                 r.json().then((err) => setErrors(err.errors))
@@ -72,8 +72,15 @@ function ReviewEdit() {
         })
     }
 
+    if (!trail) {
+        return (
+            "Loading..."
+        )
+    }
+
     return(
         <div>
+            <h2>{trail.name}</h2>
             <form className="review-edit-form" onSubmit={handleSubmit}>
                 <label>
                     Trail Rating (out of 5)
@@ -127,4 +134,4 @@ function ReviewEdit() {
     )
 }
 
-export default ReviewEdit
+export default ReviewCreate

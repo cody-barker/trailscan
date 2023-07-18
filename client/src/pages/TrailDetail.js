@@ -1,7 +1,8 @@
-import { useParams } from 'react-router-dom'
+import { useParams, NavLink } from 'react-router-dom'
 import { useContext } from 'react'
 import TrailReview from '../components/TrailReview'
 import { TrailsContext } from '../contexts/TrailsContext'
+
 
 function TrailDetail() {
     const {trails} = useContext(TrailsContext)
@@ -12,6 +13,7 @@ function TrailDetail() {
     if (!trail) {
         return <p>"Loading..."</p>
     }
+
 
     return(
         <>
@@ -32,8 +34,10 @@ function TrailDetail() {
             <p>{trail.description}</p>
         </div>
             <div className="reviews">
-            <h3>Reviews</h3>
-            <button className="green-btn">Write Review</button>
+                <h3>Reviews</h3>
+                <NavLink to={`/trails/${id}/reviews`}>
+                    <button className="green-btn">Write Review</button>
+                </NavLink>
                 {trail? (
                     trail.reviews.map((review) => {
                         return <TrailReview key={review.id} review={review}/>

@@ -35,4 +35,8 @@ class Review < ApplicationRecord
         self.trail.name
     end
 
+    def formatted_date
+        self.date.strftime("%B %d, %Y")
+    end
+
 end

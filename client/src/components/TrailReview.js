@@ -7,13 +7,13 @@ function TrailReview({ review }) {
         condition,
         content,
         username,
-        date
+        formatted_date,
     } = review
 
     return(
         <div>
             <h4>{username}</h4>
-            <p>{date}</p>
+            <p>{formatted_date}</p>
             <p>Rating: {trail_rating}/5</p>
             <p>Conditions: {condition}</p>
             <p>{content}</p>

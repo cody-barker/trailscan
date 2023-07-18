@@ -6,15 +6,14 @@ function UserProfileReview({ review }) {
         trail_rating,
         condition,
         content,
-        date,
-        trailname,
-        username
+        formatted_date,
+        trailname
     } = review
 
     return(
         <div>
             <h4>{trailname}</h4>
-            <p>{date}</p>
+            <p>{formatted_date}</p>
             <p>Rating: {trail_rating}/5</p>
             <p>Conditions: {condition}</p>
             <p>{content}</p>

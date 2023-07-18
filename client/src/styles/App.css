@@ -85,6 +85,7 @@ a:visited {
   height: 60px;
   align-items: center;
   object-fit: contain;
+  overflow: hidden
 }
 
 .nav-btn {
@@ -197,4 +198,8 @@ span.detail {
   margin-right: 5px;
 }
 
+.profile-photo {
+  width: 100px;
+  height: 100px;
+}
 

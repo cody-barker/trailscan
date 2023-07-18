@@ -3,7 +3,7 @@ user1 = User.create(
     password: "test",
     city: "Portland",
     state: "Oregon",
-    profile_image: "https://drive.google.com/file/d/1cC33jvMiEGkogPrKZJLx8pNg1MBWCHpT/view?usp=drive_link"
+    profile_image: "https://i.imgur.com/XyCqP8l.jpg"
     )
 
 user2 = User.create(
@@ -11,7 +11,7 @@ user2 = User.create(
     password: "test",
     city: "Portland",
     state: "Oregon",
-    profile_image: "https://drive.google.com/file/d/1cLj3R8nPia15lqXHYjEhQqtdqNazCPUt/view?usp=drive_link"
+    profile_image: "https://i.imgur.com/0qNJiNc.png"
     )
 
 user3 = User.create(
@@ -19,7 +19,7 @@ user3 = User.create(
     password: "test",
     city: "Portland",
     state: "Oregon",
-    profile_image: "https://drive.google.com/file/d/1ofr-vRnuxg_8VtfLLxAgzp43cDuScIRW/view?usp=drive_link"
+    profile_image: "https://i.imgur.com/a7b0I94.png"
     )
 
 Trail.create(

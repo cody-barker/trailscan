@@ -1,11 +1,12 @@
 import {useContext} from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { NavLink, useNavigate} from 'react-router-dom'
 import {UserContext} from '../contexts/UserContext'
 
 function NavBar() {
-
+    
     const navigate = useNavigate()
-    const {setUser} = useContext(UserContext)
+    const {user, setUser} = useContext(UserContext)
+    const {id} = user
 
     function handleLogout() {
         fetch("/logout", {
@@ -21,14 +22,13 @@ function NavBar() {
 
     return(
         <nav id="navbar">
-          <Link to="/"><img className="logo-img" src="https://i.imgur.com/h8odfzA.png" alt="logo"></img></Link>
-          <Link to="/"><h2 className="logo">TrailScan</h2></Link>      
-            <button className="nav-btn" as={Link} to="/new">
-                New Trail
-            </button>
+            <NavLink to="/"><img className="logo-img" src="https://i.imgur.com/h8odfzA.png" alt="logo"></img></NavLink>
+            <NavLink to="/"><h2 className="logo">TrailScan</h2></NavLink>      
+            <NavLink className="nav-btn" to="/new">New Trail</NavLink>
             <button className="nav-btn" onClick={handleLogout}>
                 Logout
             </button>
+            <NavLink className="split" to={`/user/${id}/reviews`}>Profile</NavLink>
         </nav>
     )
 }

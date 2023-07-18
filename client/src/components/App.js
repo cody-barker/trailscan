@@ -7,6 +7,7 @@ import TrailDetail from '../pages/TrailDetail'
 import '../styles/App.css';
 import { UserContext } from '../contexts/UserContext'
 import { TrailsProvider } from '../contexts/TrailsContext'
+import UserProfile from '../pages/UserProfile'
 
 function App() {
   const {user} = useContext(UserContext)
@@ -14,11 +15,17 @@ function App() {
     return <Login />
   }
 
+  console.log(user)
+
   return (
     <TrailsProvider>
       <main>
         <NavBar />
           <Routes>
+            <Route
+              path="/user/:id/reviews"
+              element={<UserProfile />}
+            />
             <Route
               path="/trails/:id"
               element={<TrailDetail />}/>

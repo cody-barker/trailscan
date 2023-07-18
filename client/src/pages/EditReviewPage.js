@@ -26,8 +26,7 @@ function EditReviewPage() {
         date,
         condition,
         content
-    } = inputState
-    
+    } = inputState    
 
     function onInputChange(e){
         setInputState({
@@ -38,7 +37,33 @@ function EditReviewPage() {
 
     function handleSubmit(e) {
         e.preventDefault()
-        fetch(`/reviews/${id}`)
+        fetch(`/reviews/${id}`, {
+            method: "PATCH",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                trail_rating: trailRating,
+                date,
+                condition,
+                content
+            })
+        })
+        .then(r => {
+            if (r.ok) {
+                r.json().then(updatedReview => {
+                    setUser({...user.reviews.map((review) => {
+                        if (review.id === id) {
+                            return updatedReview
+                        } else {
+                            return review
+                        }
+                    })})
+                })
+            } else {
+                r.json().then((err) => setErrors(err.errors))
+            }
+        })
     }
 
     console.log(review)

@@ -44,7 +44,7 @@ function LoginForm () {
                 Password
                 <input
                 name="password"
-                type="text"
+                type="password"
                 autoComplete="off"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}

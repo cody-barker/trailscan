@@ -15,6 +15,7 @@ skip_before_action :authorize, only: [:index, :show]
     end
 
     def show
+        byebug
         user = find_user
         render json: user
     end

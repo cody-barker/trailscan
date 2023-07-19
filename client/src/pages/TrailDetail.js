@@ -39,7 +39,7 @@ function TrailDetail() {
                     <button className="green-btn">Write Review</button>
                 </NavLink>
                 {trail? (
-                    trail.reviews.map((review) => {
+                    trail.reviews.sort((a,b) => (a.date < b.date) ? 1 : -1).map((review) => {
                         return <TrailReview key={review.id} review={review}/>
                     })
                 ) : (

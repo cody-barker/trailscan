@@ -238,3 +238,18 @@ span.detail {
   transition-duration: 0.5s;
 }
 
+.split {
+  font-weight: bold;
+}
+
+.nav-btn-split {
+  background: transparent;
+  border-color: transparent;
+  font-weight: bold;
+  font-size: 16px;
+  color: rgb(27, 49, 15);
+  margin-left: 8px;
+  cursor: pointer;
+  padding-top: 2px;
+}
+

@@ -21,13 +21,13 @@ skip_before_action :authorize, only: [:index, :show]
     end
 
     def create
-        user = User.find_by(id: session[:user_id])
+        user = find_user_by_session_id
         trail = user.trails.create!(trail_params)
         render json: trail
     end
 
     def update
-        user = User.find_by(id: session[:user_id])
+        user = find_user_by_session_id
         trail = find_trail
         if user.trails.includes(:id).where('trail.id = ?', 'trail.id')
             trail.update!(trail_params)
@@ -38,7 +38,8 @@ skip_before_action :authorize, only: [:index, :show]
     end
 
     def destroy
-        trail = find_trail
+        user = find_user_by_session_id
+        trail = user.trails.find(params[:id])
         trail.destroy
         render json: {}, status: :no_content
     end
@@ -47,6 +48,10 @@ skip_before_action :authorize, only: [:index, :show]
 
     def find_trail
         Trail.find(params[:id])
+    end
+
+    def find_user_by_session_id
+        User.find_by(id: session[:user_id])
     end
 
     def trail_params

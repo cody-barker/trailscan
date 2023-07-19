@@ -5,39 +5,54 @@ before_action :authorize
 skip_before_action :authorize, only: [:index, :show]
 
     def index
-        reviews = Review.all.order(date: :desc)
-        render json: reviews
+        if params[:user_id]
+            user = User.find_by(id: params[:user_id])
+            reviews = user.reviews.order(date: :desc)
+            render json: reviews
+        elsif params[:trail_id]
+            trail = Trail.find_by(id: params[:trail_id])
+            reviews = trail.reviews.order(date: :desc)
+            render json: reviews
+        else
+            reviews = Review.all.order(date: :desc)
+            render json: reviews
+        end
     end
 
     def show
-        review = find_review
+        if params[:user_id]
+            review = user.reviews.find()
+        review = Review.find(params[:id])
         render json: review
+        end
     end
 
     #access trail_id from /trails/:id and save in state
     #create with user.reviews.create to associate with user
     def create
-        user = User.find_by(id: session[:user_id])
+        user = find_user_by_session_id
         review = user.reviews.create!(review_params)
         render json: review, status: :created
     end
 
     def update
-        review = find_review
+        user = find_user_by_session_id
+        review = user.reviews.find(params[:id])
         review.update!(review_params)
         render json: review, status: :accepted
     end
 
     def destroy
-        review = find_review
+        user = find_user_by_session_id
+        review = user.reviews.find(params[:id])
         review.destroy
         render json: {}, status: :no_content
     end
 
     private
 
-    def find_review
-        Review.find(params[:id])
+    def find_user_by_session_id
+        User.find_by(id: session[:user_id])
     end
 
     def review_params

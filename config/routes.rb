@@ -9,12 +9,16 @@ Rails.application.routes.draw do
   end
 
   resources :trails do
-    resources :reviews, only: [:create]
+    resources :reviews
   end
 
 
   resources :users do
     resources :trails
+  end
+
+  resources :users do
+    resources :reviews
   end
 
   resources :reviews

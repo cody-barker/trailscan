@@ -21,7 +21,7 @@ function UserProfile() {
         </div>
         <hr></hr>
         <div>
-            <h3>Reviews</h3>
+            <h3>Your Reviews</h3>
            {user.reviews.map((review) => {
                 return <UserTrailReview key={review.id} review={review}/>
             })}

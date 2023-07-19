@@ -13,20 +13,20 @@ function UserProfile() {
     } = user
 
     return(
-        <>
-        <div>
-            <img className="profile-photo" src={profile_image} alt="profile"></img>
-            <h3>{username}</h3>
-            <p>{city}, {state}</p>
+        <div className="profile-container">
+            <div>
+                <img className="profile-photo" src={profile_image} alt="profile"></img>
+                <h3>{username}</h3>
+                <p>{city}, {state}</p>
+            </div>
+            <hr></hr>
+            <div>
+                <h3>Your Reviews</h3>
+            {user.reviews.map((review) => {
+                    return <UserTrailReview key={review.id} review={review}/>
+                })}
+            </div>
         </div>
-        <hr></hr>
-        <div>
-            <h3>Your Reviews</h3>
-           {user.reviews.map((review) => {
-                return <UserTrailReview key={review.id} review={review}/>
-            })}
-        </div>
-        </>
 
 
     )

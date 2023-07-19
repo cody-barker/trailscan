@@ -24,7 +24,7 @@ function NavBar() {
         <nav id="navbar">
             <NavLink to="/"><img className="logo-img" src="https://i.imgur.com/h8odfzA.png" alt="logo"></img></NavLink>
             <NavLink to="/"><h2 className="logo">TrailScan</h2></NavLink>      
-            <NavLink className="nav-btn" to="/new">New Trail</NavLink>
+            <NavLink className="nav-btn" to="/trails">New Trail</NavLink>
             <NavLink className="split" to={`/user/${id}/reviews`}>Profile</NavLink>
             <button className="nav-btn-split" onClick={handleLogout}>
                 Logout

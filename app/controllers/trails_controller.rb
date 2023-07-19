@@ -21,9 +21,8 @@ skip_before_action :authorize, only: [:index, :show]
     end
 
     def create
-        user = find_user_by_session_id
-        trail = user.trails.create!(trail_params)
-        render json: trail
+        trail = Trail.create!(trail_params)
+        render json: trail, status: :created
     end
 
     def update

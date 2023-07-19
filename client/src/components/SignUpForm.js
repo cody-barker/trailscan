@@ -14,6 +14,7 @@ function SignUp() {
         passwordConfirmation: "",
         city: "",
         state: "",
+        profileImage: "",
     })
 
     const {
@@ -21,7 +22,8 @@ function SignUp() {
         password,
         passwordConfirmation,
         city,
-        state
+        state,
+        profileImage
     } = inputState
 
     function onInputChange(e){
@@ -45,7 +47,8 @@ function SignUp() {
                 password,
                 password_confirmation: passwordConfirmation,
                 city,
-                state 
+                state,
+                profile_image: profileImage
             })
         }).then((r) => {
             setisLoading(false)
@@ -90,10 +93,20 @@ function SignUp() {
                 ></input>
             </label>
             <label>
+                Profile Photo (URL)
+                <input
+                name="profileImage"
+                type="text"
+                autoComplete="off"
+                value={profileImage}
+                onChange={onInputChange}
+                ></input>
+            </label>
+            <label>
                 Password
                 <input
                 name="password"
-                type="text"
+                type="password"
                 autoComplete="off"
                 value={password}
                 onChange={onInputChange}
@@ -103,7 +116,7 @@ function SignUp() {
                 Password Confirmation
                 <input
                 name="passwordConfirmation"
-                type="text"
+                type="password"
                 autoComplete="off"
                 value={passwordConfirmation}
                 onChange={onInputChange}

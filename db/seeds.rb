@@ -11,7 +11,7 @@ user2 = User.create(
     password: "test",
     city: "Portland",
     state: "Oregon",
-    profile_image: "https://i.imgur.com/0qNJiNc.png"
+    profile_image: "https://i.imgur.com/M24RM1O.jpg"
     )
 
 user3 = User.create(
@@ -19,7 +19,7 @@ user3 = User.create(
     password: "test",
     city: "Portland",
     state: "Oregon",
-    profile_image: "https://i.imgur.com/a7b0I94.png"
+    profile_image: "https://i.imgur.com/oxz0elk.jpg"
     )
 
 Trail.create(

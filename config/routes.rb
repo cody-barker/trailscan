@@ -12,11 +12,6 @@ Rails.application.routes.draw do
     resources :reviews
   end
 
-
-  resources :users do
-    resources :trails
-  end
-
   resources :users do
     resources :reviews
   end

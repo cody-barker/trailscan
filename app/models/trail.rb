@@ -14,7 +14,11 @@ class Trail < ApplicationRecord
     end
 
     def average_rating
-        self.reviews.average(:trail_rating).round(1)
+        if self.reviews.empty?
+            return nil
+        else
+            return self.reviews.average(:trail_rating).round(1)
+        end
     end
 
 end

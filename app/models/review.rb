@@ -28,4 +28,8 @@ class Review < ApplicationRecord
         self.date.strftime("%B %d, %Y")
     end
 
+    def profile_image
+        self.user.profile_image
+    end
+
 end

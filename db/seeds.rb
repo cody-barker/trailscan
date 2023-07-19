@@ -1,5 +1,5 @@
 user1 = User.create(
-    username: "Cody Barker",
+    username: "codybarker",
     password: "test",
     city: "Portland",
     state: "Oregon",
@@ -7,7 +7,7 @@ user1 = User.create(
     )
 
 user2 = User.create(
-    username: "Kelli Radwanski",
+    username: "kelliradwanski",
     password: "test",
     city: "Portland",
     state: "Oregon",
@@ -15,7 +15,7 @@ user2 = User.create(
     )
 
 user3 = User.create(
-    username: "Ben Buckingham",
+    username: "benbuckingham",
     password: "test",
     city: "Portland",
     state: "Oregon",

@@ -12,12 +12,16 @@ function SignUp() {
         username: "",
         password: "",
         passwordConfirmation: "",
+        city: "",
+        state: "",
     })
 
     const {
         username,
         password,
         passwordConfirmation,
+        city,
+        state
     } = inputState
 
     function onInputChange(e){
@@ -39,7 +43,9 @@ function SignUp() {
             body: JSON.stringify({
                 username,
                 password,
-                password_confirmation: passwordConfirmation 
+                password_confirmation: passwordConfirmation,
+                city,
+                state 
             })
         }).then((r) => {
             setisLoading(false)
@@ -60,6 +66,26 @@ function SignUp() {
                 type="text"
                 autoComplete="off"
                 value={username}
+                onChange={onInputChange}
+                ></input>
+            </label>
+            <label>
+                City
+                <input
+                name="city"
+                type="text"
+                autoComplete="off"
+                value={city}
+                onChange={onInputChange}
+                ></input>
+            </label>
+            <label>
+                State
+                <input
+                name="state"
+                type="text"
+                autoComplete="off"
+                value={state}
                 onChange={onInputChange}
                 ></input>
             </label>

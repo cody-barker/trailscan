@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 rescue_from ActiveRecord::RecordNotFound, with: :render_user_not_found_resp
 rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_resp
 before_action :authorize
-skip_before_action :authorize, only: [:index, :show]
+skip_before_action :authorize, only: [:index, :show, :create]
 
     def index
         if params[:trail_id]
@@ -15,7 +15,6 @@ skip_before_action :authorize, only: [:index, :show]
     end
 
     def show
-        byebug
         user = find_user
         render json: user
     end

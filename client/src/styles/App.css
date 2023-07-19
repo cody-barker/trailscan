@@ -58,8 +58,10 @@ h3 {
 }
 
 .card-container {
-  width: 100%;
-  display: flex;
+  width: 1350px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
   align-items: center;
   justify-content: center;
 }

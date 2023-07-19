@@ -28,7 +28,6 @@
   color: #61dafb;
 }
 
-
 img {
   width: 300px;
   height: 200px;
@@ -169,14 +168,15 @@ form {
 
 .trail-details-container {
   margin-bottom: 30px;
-  margin-left: 50px;
+  margin-left: auto;
+  margin-right: auto;
   border: 1px solid black;
   width: 800px;
   padding: 10px;
 }
 
 span.detail {
-  margin: 10px;
+  margin: 20px;
   padding: 10px;
 }
 
@@ -186,6 +186,8 @@ span.detail {
   width: 800px;
   padding: 10px;
   border: 1px solid black;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .logo {
@@ -222,7 +224,6 @@ span.detail {
 }
 
 .green-btn {
-  float: right;
   border-radius: 30px;
   width: 130px;
   height: 50px;
@@ -231,6 +232,8 @@ span.detail {
   font-weight: bold;
   cursor: pointer;
   transition-duration: 0.5s;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .green-btn:hover {
@@ -251,5 +254,15 @@ span.detail {
   margin-left: 8px;
   cursor: pointer;
   padding-top: 2px;
+}
+
+.trail-page-container {
+  text-align: center;
+  position: relative;
+  text-align: center;
+}
+
+.coordinates {
+  margin: 15px;
 }
 

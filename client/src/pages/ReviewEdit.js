@@ -17,7 +17,7 @@ function ReviewEdit() {
     const review = user.reviews.find((review) => {
         return review.id === id
     })
-    
+
     const trail = trails.find((trail) => {
         return trail.id === review.trail_id
     })
@@ -76,7 +76,7 @@ function ReviewEdit() {
                             return r
                         }
                     })
-                    const updatedTrails = [...trails].map((t) => {
+                    const updatedTrails = trails.map((t) => {
                         if (t.id === trail.id) {
                             return trail
                         } else {

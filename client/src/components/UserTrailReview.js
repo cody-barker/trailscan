@@ -35,7 +35,7 @@ function UserTrailReview({ review }) {
             trail.reviews = trail.reviews.filter((review) => {
                 return review.id !== id
             })
-            const updatedTrails = [...trails].map((t) => {
+            const updatedTrails = trails.map((t) => {
                 if (t.id === trail_id) {
                     return trail
                 } else {

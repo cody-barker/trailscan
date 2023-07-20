@@ -289,3 +289,12 @@ span.detail {
   margin-bottom: 10px;
 }
 
+.review-thumbnail {
+  width: 100px;
+  height: auto;
+}
+
+.review-title {
+  margin: 5px;
+
+}

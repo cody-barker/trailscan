@@ -8,6 +8,7 @@ function UserTrailReview({ review }) {
 
     const {
         id,
+        trail_id,
         trail_rating,
         condition,
         content,
@@ -29,7 +30,10 @@ function UserTrailReview({ review }) {
 
     return(
         <div>
-            <h4>{trailname}</h4>
+            <NavLink to={`/trails/${trail_id}`}>
+                <h4 className="review-title">{trailname}</h4>
+                <img className="review-thumbnail" src={review.trail_photo}></img>
+            </NavLink>
             <p>{formatted_date}</p>
             <p>Rating: {trail_rating}/5</p>
             <p>Conditions: {condition}</p>

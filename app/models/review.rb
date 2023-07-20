@@ -33,4 +33,8 @@ class Review < ApplicationRecord
         self.user.profile_image
     end
 
+    def trail_photo
+        self.trail.photo
+    end
+
 end

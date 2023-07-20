@@ -1,6 +1,7 @@
 import { useContext, useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { UserContext } from '../contexts/UserContext'
+import { TrailsContext } from '../contexts/TrailsContext'
 import Error from '../components/Error'
 
 
@@ -11,9 +12,14 @@ function ReviewEdit() {
     let {id} = useParams()
     id = parseInt(id)
     const navigate = useNavigate()
-    
+    const {trails, setTrails} = useContext(TrailsContext)
+
     const review = user.reviews.find((review) => {
         return review.id === id
+    })
+    
+    const trail = trails.find((trail) => {
+        return trail.id === review.trail_id
     })
 
     const [inputState, setInputState] = useState({
@@ -63,7 +69,21 @@ function ReviewEdit() {
                             }
                         })]
                     })
-                    setErrors([])
+                    trail.reviews = trail.reviews.map((r) => {
+                        if (r.id === id) {
+                            return updatedReview
+                        } else {
+                            return r
+                        }
+                    })
+                    const updatedTrails = [...trails].map((t) => {
+                        if (t.id === trail.id) {
+                            return trail
+                        } else {
+                            return t
+                        }
+                    })
+                    setTrails(updatedTrails)
                     navigate(`/user/${user.id}/reviews`)
                 })
             } else {

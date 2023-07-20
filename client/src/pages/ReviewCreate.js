@@ -90,7 +90,7 @@ function ReviewCreate() {
 
     return(
         <div>
-            <h2>{trail.name}</h2>
+            <h2 className="wrapper">{trail.name}</h2>
             <form className="review-edit-form" onSubmit={handleSubmit}>
                 <label>
                     Trail Rating (out of 5)

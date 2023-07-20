@@ -4,21 +4,19 @@ import NavBar from './NavBar'
 import Login from '../pages/Login'
 import Trails from '../pages/Trails'
 import TrailDetail from '../pages/TrailDetail'
-import '../styles/App.css';
 import { UserContext } from '../contexts/UserContext'
 import { TrailsProvider } from '../contexts/TrailsContext'
 import UserProfile from '../pages/UserProfile'
 import ReviewEdit from '../pages/ReviewEdit'
 import ReviewCreate from '../pages/ReviewCreate'
 import TrailCreate from '../pages/TrailCreate'
+import '../styles/App.css';
 
 function App() {
   const {user} = useContext(UserContext)
   if (!user) {
     return <Login />
   }
-
-  console.log(user)
 
   return (
     <TrailsProvider>
@@ -44,9 +42,6 @@ function App() {
               path="/trails"
               element={<TrailCreate />}
             />
-            <Route 
-              path="/login"
-              element={<Login />}/>
             <Route 
               path="/" 
               element={<Trails />}/>

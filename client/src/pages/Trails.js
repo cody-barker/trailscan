@@ -27,7 +27,6 @@ function Trails() {
         <div className="card-container">
             <h1>Explore trails near you</h1>
         </div>
-
         <div className="card-container">    
             {trails.length > 0 ? (
                 trails.map((trail) => {

@@ -67,8 +67,6 @@ function TrailCreate() {
         })
     }
 
-    console.log(dogsAllowed)
-
     return(
             <form className="review-edit-form" onSubmit={handleSubmit}>
                 <label>

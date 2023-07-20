@@ -15,7 +15,6 @@ function TrailCard({ trail }) {
 
     return(
         <div className="trail-card">
-            
             <NavLink to={`/trails/${id}`}>
             <img src={photo} alt="trail"></img>
             <span>{difficulty}</span>
@@ -26,7 +25,6 @@ function TrailCard({ trail }) {
             <h3>{name}</h3>
             <p>Length: {length} mi</p>
             </NavLink>
-          
         </div>
     )
 }

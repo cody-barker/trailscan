@@ -6,7 +6,6 @@ import SignUpForm from '../components/SignUpForm'
 function Login () {
     const [showLogin, setShowLogin] = useState(true)
 
-
     return (
         <div className="wrapper">
             <h1>TrailScan</h1>

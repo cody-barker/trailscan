@@ -14,7 +14,6 @@ function TrailDetail() {
         return <p>"Loading..."</p>
     }
 
-
     return(
         <>
         <div className="header-container">
@@ -34,19 +33,19 @@ function TrailDetail() {
                 <h3>Description</h3>
                 <p>{trail.description}</p>
             </div>
-                <div className="reviews">
-                    <h3>Reviews</h3>
-                    <NavLink to={`/trails/${id}/reviews`}>
-                        <button className="green-btn">Write Review</button>
-                    </NavLink>
-                    <hr></hr>
-                    {trail? (
-                        trail.reviews.sort((a,b) => (a.date < b.date) ? 1 : -1).map((review) => {
-                            return <TrailReview key={review.id} review={review}/>
-                        })
-                    ) : (
-                        <p>"Loading..."</p>
-                    )}
+            <div className="reviews">
+                <h3>Reviews</h3>
+                <NavLink to={`/trails/${id}/reviews`}>
+                    <button className="green-btn">Write Review</button>
+                </NavLink>
+                <hr></hr>
+                {trail ? (
+                    trail.reviews.sort((a,b) => (a.date < b.date) ? 1 : -1).map((review) => {
+                        return <TrailReview key={review.id} review={review}/>
+                    })
+                ) : (
+                    <p>"Loading..."</p>
+                )}
             </div>
         </div>
         </>

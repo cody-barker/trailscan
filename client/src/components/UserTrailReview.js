@@ -1,11 +1,12 @@
 import { useContext } from 'react'
 import { UserContext } from '../contexts/UserContext'
+import { TrailsContext } from '../contexts/TrailsContext'
 import { NavLink } from 'react-router-dom'
 
 function UserTrailReview({ review }) {
 
     const {user, setUser} = useContext(UserContext)
-
+    const {trails, setTrails} = useContext(TrailsContext)
     const {
         id,
         trail_id,
@@ -15,6 +16,10 @@ function UserTrailReview({ review }) {
         formatted_date,
         trailname
     } = review
+
+    const trail = trails.find((trail) => {
+       return trail.id === trail_id
+    })
 
     function handleDelete() {
         fetch(`/reviews/${id}`, {
@@ -26,13 +31,26 @@ function UserTrailReview({ review }) {
                 return review.id !== id
             })}
         ))
+        .then(() => {
+            trail.reviews = trail.reviews.filter((review) => {
+                return review.id !== id
+            })
+            const updatedTrails = [...trails].map((t) => {
+                if (t.id === trail_id) {
+                    return trail
+                } else {
+                    return t
+                }
+            })
+            setTrails(updatedTrails)
+        })
     }
 
     return(
         <div>
             <NavLink to={`/trails/${trail_id}`}>
                 <h4 className="review-title">{trailname}</h4>
-                <img className="review-thumbnail" src={review.trail_photo}></img>
+                <img className="review-thumbnail" src={review.trail_photo} alt="trail"></img>
             </NavLink>
             <p>{formatted_date}</p>
             <p>Rating: {trail_rating}/5</p>

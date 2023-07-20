@@ -1,11 +1,9 @@
-import {useState, useEffect, createContext, useContext} from 'react'
-import { UserContext } from './UserContext'
+import {useState, useEffect, createContext} from 'react'
 
 const TrailsContext = createContext()
 
 function TrailsProvider({children}) {
     const [trails, setTrails] = useState([])
-    const {user} = useContext(UserContext)
     useEffect(() => {
         fetch("/trails")
         .then((r) => r.json())

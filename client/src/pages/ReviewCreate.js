@@ -8,7 +8,7 @@ function ReviewCreate() {
 
     let {id} = useParams()
     id = parseInt(id)
-    const {trails} = useContext(TrailsContext)
+    const {trails, setTrails} = useContext(TrailsContext)
     const {user, setUser} = useContext(UserContext)
     const trail = trails.find((trail) => {
         return trail.id === id
@@ -63,7 +63,17 @@ function ReviewCreate() {
                             newReview, ...user.reviews
                         ]
                     })
-                    setErrors([])
+                    const updatedTrails = trails.map((t) => {
+                        if (t.id === id) {
+                            return ({
+                                ...t,
+                                reviews: [newReview ,...t.reviews]
+                            })
+                        } else {
+                            return t
+                        }
+                    })
+                    setTrails(updatedTrails)
                     navigate(`/trails/${id}`)
                 })
             } else {

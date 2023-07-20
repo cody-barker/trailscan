@@ -2,37 +2,7 @@ class ReviewsController < ApplicationController
 rescue_from ActiveRecord::RecordNotFound, with: :render_record_not_found_resp
 rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_resp
 before_action :authorize
-# skip_before_action :authorize, only: [:index, :show]
-#destroy /reviews/:id in UserTrailReview
-#create `/trails/${id}/reviews` in ReviewCreate
-#edit `/reviews/${id}` in ReviewEdit
 
-
-    # def index
-    #     if params[:user_id]
-    #         user = User.find_by(id: params[:user_id])
-    #         reviews = user.reviews.order(date: :desc)
-    #         render json: reviews
-    #     elsif params[:trail_id]
-    #         trail = Trail.find_by(id: params[:trail_id])
-    #         reviews = trail.reviews.order(date: :desc)
-    #         render json: reviews
-    #     else
-    #         reviews = Review.all.order(date: :desc)
-    #         render json: reviews
-    #     end
-    # end
-
-    # def show
-    #     if params[:user_id]
-    #         review = user.reviews.find()
-    #     review = Review.find(params[:id])
-    #     render json: review
-    #     end
-    # end
-
-    #access trail_id from /trails/:id and save in state
-    #create with user.reviews.create to associate with user
     def create
         user = find_user_by_session_id
         review = user.reviews.create!(review_params)

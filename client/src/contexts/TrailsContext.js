@@ -10,7 +10,7 @@ function TrailsProvider({children}) {
         fetch("/trails")
         .then((r) => r.json())
         .then((trails) => setTrails(trails))
-      }, [user])
+      }, [])
 
     return(
         <TrailsContext.Provider value={{trails, setTrails}}>

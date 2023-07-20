@@ -7,7 +7,8 @@ class Review < ApplicationRecord
         only_integer: true,
         greater_than: 0,
         less_than_or_equal_to: 5}
-    validates :content, length: {minimum: 0, maximum: 250}
+    validates :condition, length: {maximum: 300}
+    validates :content, length: {maximum: 2000}
     validate :date_is_today_or_earlier
 
     def date_is_today_or_earlier

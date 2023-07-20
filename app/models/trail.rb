@@ -1,6 +1,8 @@
 class Trail < ApplicationRecord
     has_many :reviews, dependent: :delete_all
     has_many :users, through: :reviews
+    validates :name, presence: true
+    validates :name, length: {maximum: 60}
     validates :difficulty, inclusion: {in: ["Easy", "Moderate", "Hard"]}
     validates :length, numericality: {greater_than: 0}
     validates :description, presence: :true
@@ -15,7 +17,7 @@ class Trail < ApplicationRecord
 
     def average_rating
         if self.reviews.empty?
-            return nil
+            return []
         else
             return self.reviews.average(:trail_rating).round(1)
         end

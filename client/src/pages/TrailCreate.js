@@ -82,7 +82,7 @@ function TrailCreate() {
                     />
                 </label>
                 <label>
-                    Length
+                    Length (mi)
                     <input
                     name="length"
                     type="text"

@@ -58,7 +58,7 @@ h3 {
 }
 
 .card-container {
-  width: 1350px;
+  width: 1020px;
   margin-left: auto;
   margin-right: auto;
   display: block;
@@ -203,6 +203,7 @@ span.detail {
 }
 
 .profile-photo {
+  margin-top: 10px;
   width: 200px;
   height: 200px;
   border-radius: 50%;
@@ -261,7 +262,6 @@ span.detail {
 .trail-page-container {
   text-align: center;
   position: relative;
-  text-align: center;
 }
 
 .coordinates {
@@ -274,10 +274,14 @@ span.detail {
 }
 
 .profile-container {
-  margin-top: 10px;
+  margin-top: 20px;
+  width: 600px;
   text-align: center;
   position: relative;
-  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid black;
+  border-bottom: 0px;
 }
 
 .select {

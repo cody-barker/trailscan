@@ -1,4 +1,4 @@
-user1 = User.create(
+user1 = User.create!(
     username: "codybarker",
     password: "test",
     city: "Portland",
@@ -6,7 +6,7 @@ user1 = User.create(
     profile_image: "https://i.imgur.com/XyCqP8l.jpg"
     )
 
-user2 = User.create(
+user2 = User.create!(
     username: "kelliradwanski",
     password: "test",
     city: "Portland",
@@ -14,7 +14,7 @@ user2 = User.create(
     profile_image: "https://i.imgur.com/M24RM1O.jpg"
     )
 
-user3 = User.create(
+user3 = User.create!(
     username: "benbuckingham",
     password: "test",
     city: "Portland",
@@ -22,7 +22,7 @@ user3 = User.create(
     profile_image: "https://i.imgur.com/oxz0elk.jpg"
     )
 
-Trail.create(
+Trail.create!(
     name: "Little Lake",
     difficulty: "Easy",
     length: 2.3,
@@ -33,7 +33,7 @@ Trail.create(
     photo: "https://photos.thedyrt.com/photo/39419/photo/oregon-little-crater-lake-campground_e22fadabdb692a2cf4504f749b3372ea.jpg?auto=webp&width=1482"
 )
 
-Trail.create(
+Trail.create!(
     name: "Miner's Peak",
     difficulty: "Moderate",
     length: 5.1,
@@ -44,7 +44,7 @@ Trail.create(
     photo: "https://oregonwild.org/sites/default/files/featured-imgs/ZipMt.Jefferson.jpg"
 )
 
-Trail.create(
+Trail.create!(
     name: "Devastation Point",
     difficulty: "Hard",
     length: 9.7,
@@ -55,7 +55,7 @@ Trail.create(
     photo: "https://hikingproject.com/assets/photos/hike/7049528_medium_1555541583.jpg?cache=1688773247"
 )
 
-user1.reviews.create(
+user1.reviews.create!(
     trail_id: 1,
     date: "2023-05-10",
     trail_rating: 4,
@@ -63,7 +63,7 @@ user1.reviews.create(
     content: "I love this trail! Great for the whole family!"
 )
 
-user1.reviews.create(
+user1.reviews.create!(
     trail_id: 2,
     date: "2023-05-10",
     trail_rating: 4,
@@ -71,7 +71,7 @@ user1.reviews.create(
     content: "Fun hike but the trail was a bit muddy."
 )
 
-user1.reviews.create(
+user1.reviews.create!(
     trail_id: 3,
     date: "2022-08-10",
     trail_rating: 5,
@@ -79,7 +79,7 @@ user1.reviews.create(
     content: "So hard but totally worth the summit! Can't wait to do it again next year!"
 )
 
-user2.reviews.create(
+user2.reviews.create!(
     trail_id: 1,
     date: "2023-06-01",
     trail_rating: 4,
@@ -87,7 +87,7 @@ user2.reviews.create(
     content: "Lovely! So fun for the kids."
 )
 
-user2.reviews.create(
+user2.reviews.create!(
     trail_id: 2,
     date: "2023-04-10",
     trail_rating: 4,
@@ -95,7 +95,7 @@ user2.reviews.create(
     content: "I had so much fun hiking this with my boyfriend. Wonderful view at the top!"
 )
 
-user2.reviews.create(
+user2.reviews.create!(
     trail_id: 3,
     date: "2022-08-11",
     trail_rating: 5,
@@ -103,7 +103,7 @@ user2.reviews.create(
     content: "What a workout!"
 )
 
-user3.reviews.create(
+user3.reviews.create!(
     trail_id: 1,
     date: "2023-06-18",
     trail_rating: 4,
@@ -111,7 +111,7 @@ user3.reviews.create(
     content: "Pretty but short."
 )
 
-user3.reviews.create(
+user3.reviews.create!(
     trail_id: 2,
     date: "2023-07-6",
     trail_rating: 5,
@@ -119,7 +119,7 @@ user3.reviews.create(
     content: "Worth the trip!"
 )
 
-user3.reviews.create(
+user3.reviews.create!(
     trail_id: 3,
     date: "2022-09-01",
     trail_rating: 5,

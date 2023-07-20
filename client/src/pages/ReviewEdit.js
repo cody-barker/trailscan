@@ -11,7 +11,7 @@ function ReviewEdit() {
     let {id} = useParams()
     id = parseInt(id)
     const navigate = useNavigate()
-
+    
     const review = user.reviews.find((review) => {
         return review.id === id
     })
@@ -75,6 +75,7 @@ function ReviewEdit() {
     return(
         <div>
             <form className="review-edit-form" onSubmit={handleSubmit}>
+                <h2>{review.trailname}</h2>
                 <label>
                     Trail Rating (out of 5)
                     <input

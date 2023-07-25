@@ -61,13 +61,13 @@ function ReviewEdit() {
             if (r.ok) {
                 r.json().then(updatedReview => {
                     setUser({...user,
-                        reviews: [...user.reviews.map((review) => {
+                        reviews: user.reviews.map((review) => {
                              if (review.id === id) {
                                 return updatedReview
                             } else {
                                 return review
                             }
-                        })]
+                        })
                     })
                     trail.reviews = trail.reviews.map((r) => {
                         if (r.id === id) {

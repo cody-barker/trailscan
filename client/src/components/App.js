@@ -18,6 +18,8 @@ function App() {
     return <Login />
   }
 
+  console.log(user)
+
   return (
     <TrailsProvider>
       <main>

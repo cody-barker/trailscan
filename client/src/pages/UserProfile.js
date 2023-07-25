@@ -20,6 +20,13 @@ function UserProfile() {
                 <p>{city}, {state}</p>
             </div>
             <hr></hr>
+            <h3>Trails Hiked</h3>
+            <div>
+                    {user.uniq_user_trails.map((trail) => {
+                        return <p key={trail.id}>{trail.name}</p>
+                    })}
+            </div>
+            <hr></hr>
             <div>
                 <h3>Reviews</h3>
                 <hr></hr>

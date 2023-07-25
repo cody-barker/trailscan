@@ -57,11 +57,14 @@ function ReviewCreate() {
         .then(r => {
             if (r.ok) {
                 r.json().then(newReview => {
+                    const key = "name"
                     setUser({
                         ...user,
                         reviews: [
                             newReview, ...user.reviews
-                        ]
+                        ],
+                        trails: [trail, ...user.trails],
+                        uniq_user_trail_names: [...new Set(trails.map(trail => trail[key]).values())]
                     })
                     const updatedTrails = trails.map((t) => {
                         if (t.id === id) {
@@ -81,6 +84,8 @@ function ReviewCreate() {
             }
         })
     }
+
+    console.log(user)
 
     if (!trail) {
         return (

@@ -1,7 +1,6 @@
 class ReviewsController < ApplicationController
 rescue_from ActiveRecord::RecordNotFound, with: :render_record_not_found_resp
 rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_resp
-#before_action :authorize move this to the application controller
 
     def create
         user = find_user_by_session_id

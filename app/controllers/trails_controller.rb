@@ -1,7 +1,6 @@
 class TrailsController < ApplicationController
 rescue_from ActiveRecord::RecordNotFound, with: :render_trail_not_found_resp
 rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_resp
-before_action :authorize
 
     def index
         trails = Trail.all

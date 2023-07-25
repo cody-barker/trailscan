@@ -7,8 +7,10 @@ class User < ApplicationRecord
     validates :username, format: {without: /\s/, message: "must contain no spaces"}
     validates :password, length: {minimum: 4, maximum: 16}
 
-     def uniq_user_trails
-        trails = self.trails.uniq
-        return trails
+     def uniq_user_trail_names
+        trails = self.trails.map do |trail|
+            trail.name
+        end
+        return trails.uniq
     end
 end

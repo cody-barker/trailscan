@@ -21,6 +21,9 @@ function UserTrailReview({ review }) {
        return trail.id === trail_id
     })
 
+    console.log(user)
+
+
     function handleDelete() {
         fetch(`/reviews/${id}`, {
             method: "DELETE"
@@ -29,8 +32,11 @@ function UserTrailReview({ review }) {
             ...user,
             reviews: user.reviews.filter((review) => {
                 return review.id !== id
-            })}
-        ))
+            }),
+            trails: user.trails.filter((t) => {
+                return t.id !== trail_id
+            })
+        }))
         .then(() => {
             trail.reviews = trail.reviews.filter((review) => {
                 return review.id !== id

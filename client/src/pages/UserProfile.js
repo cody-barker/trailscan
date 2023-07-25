@@ -12,6 +12,10 @@ function UserProfile() {
         profile_image
     } = user
 
+    const uniqTrailNames = [...new Set(user.trails.map((trail) => {
+        return trail.name
+    }))]
+
     return(
         <div className="profile-container">
             <div>
@@ -22,9 +26,9 @@ function UserProfile() {
             <hr></hr>
             <h3>Trails Hiked</h3>
             <div>
-                    {user.uniq_user_trail_names.map((name) => {
+                    {(uniqTrailNames.map((name) => {
                         return <p key={name}>{name}</p>
-                    })}
+                    }))}
             </div>
             <hr></hr>
             <div>

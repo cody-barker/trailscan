@@ -3,6 +3,10 @@ rescue_from ActiveRecord::RecordNotFound, with: :render_user_not_found_resp
 rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_resp
 skip_before_action :authorize, only: [:create]
 
+    def index
+        render json: User.all
+    end
+
     def show
         user = User.find_by(id: session[:user_id])
         if user

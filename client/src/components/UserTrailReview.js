@@ -1,12 +1,10 @@
 import { useContext } from 'react'
 import { UserContext } from '../contexts/UserContext'
-import { TrailsContext } from '../contexts/TrailsContext'
 import { NavLink } from 'react-router-dom'
 
 function UserTrailReview({ review }) {
 
     const {user, setUser} = useContext(UserContext)
-    const {trails, setTrails} = useContext(TrailsContext)
     const {
         id,
         trail_id,
@@ -17,34 +15,30 @@ function UserTrailReview({ review }) {
         trailname
     } = review
 
-    const trail = trails.find((trail) => {
-       return trail.id === trail_id
-    })
-
     function handleDelete() {
         fetch(`/reviews/${id}`, {
-            method: "DELETE"
-        })
-       .then(setUser({
+          method: "DELETE",
+        }).then(() => {
+          const updatedUser = {
             ...user,
-            reviews: user.reviews.filter((review) => {
-                return review.id !== id
-            })
-        }))
-        .then(() => {
-            trail.reviews = trail.reviews.filter((review) => {
-                return review.id !== id
-            })
-            const updatedTrails = trails.map((t) => {
-                if (t.id === trail_id) {
-                    return trail
-                } else {
-                    return t
-                }
-            })
-            setTrails(updatedTrails)
+            reviews: user.reviews.filter((review) => review.id !== id),
+          }
+          setUser(updatedUser)
+
+          const otherReviewsOfTrail = updatedUser.reviews.some(
+            (review) => review.trail_id === trail_id
+          )
+    
+          const updatedTrails = otherReviewsOfTrail
+            ? user.trails
+            : user.trails.filter((trail) => trail.id !== trail_id)
+    
+          setUser((user) => ({
+            ...user,
+            trails: updatedTrails,
+          }))
         })
-    }
+      }
 
     return(
         <div>

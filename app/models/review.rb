@@ -37,8 +37,4 @@ class Review < ApplicationRecord
         self.trail.photo
     end
 
-    def trail_obj
-        self.trail
-    end
-
 end

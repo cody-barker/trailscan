@@ -29,6 +29,7 @@ function UserProfile() {
                     {(uniqTrailNames.map((name) => {
                         return <p key={name}>{name}</p>
                     }))}
+                  
             </div>
             <hr></hr>
             <div>

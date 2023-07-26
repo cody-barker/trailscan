@@ -12,6 +12,16 @@ rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_resp
         render json: trail, status: :created
     end
 
+    def short_trails
+        trails = Trail.all.where("length < ?", params[:num])
+        if trails.any?
+            users = trails.map { |trail| trail.users}
+            render json: users.flatten.uniq.to_json
+        else
+            render json: {error: "No trails are shorter than #{params[:num]} miles long."}, status: :not_found
+        end
+    end
+
     private
 
     def trail_params

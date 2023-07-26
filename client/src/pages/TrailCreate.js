@@ -17,7 +17,7 @@ function TrailCreate() {
         dogsAllowed: "",
         familyFriendly: "",
     })
-
+    
     const {
         name,
         length,

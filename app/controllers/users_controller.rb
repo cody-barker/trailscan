@@ -1,6 +1,4 @@
 class UsersController < ApplicationController
-rescue_from ActiveRecord::RecordNotFound, with: :render_user_not_found_resp
-rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_resp
 skip_before_action :authorize, only: [:create]
 
     def index
@@ -36,14 +34,6 @@ skip_before_action :authorize, only: [:create]
             :city, 
             :state, 
             :profile_image)
-    end
-
-    def render_user_not_found_resp
-        render json: {error: "User not found."}, status: :not_found
-    end
-
-    def render_unprocessable_entity_resp(e)
-        render json: {errors: e.record.errors.full_messages}, status: :unprocessable_entity
     end
 
 end

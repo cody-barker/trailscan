@@ -1,6 +1,4 @@
 class ReviewsController < ApplicationController
-rescue_from ActiveRecord::RecordNotFound, with: :render_record_not_found_resp
-rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_resp
 
     def create
         user = find_user_by_session_id
@@ -47,18 +45,6 @@ rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_resp
             :trail_rating,
             :condition,
             :content)
-    end
-
-    def render_unprocessable_entity_resp(e)
-        render json: {errors: e.record.errors.full_messages}, status: :unprocessable_entity
-    end
-
-    def render_record_not_found_resp
-        render json: {error: "Record not found."}, status: :not_found
-    end
-
-    def authorize
-        render json: {error: "Not authorized."}, status: :unauthorized unless session[:user_id]
     end
 
 end

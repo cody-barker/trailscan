@@ -6,29 +6,24 @@ import Error from '../components/Error'
 
 
 function ReviewEdit() {
-
     const {user, setUser} = useContext(UserContext)
     const [errors, setErrors] = useState([])
     let {id} = useParams()
     id = parseInt(id)
     const navigate = useNavigate()
     const {trails, setTrails} = useContext(TrailsContext)
-
     const review = user.reviews.find((review) => {
         return review.id === id
     })
-
     const trail = trails.find((trail) => {
         return trail.id === review.trail_id
     })
-
     const [inputState, setInputState] = useState({
         trailRating: review.trail_rating,
         date: review.date,
         condition: review.condition,
         content: review.content
     })
-
     const {
         trailRating,
         date,

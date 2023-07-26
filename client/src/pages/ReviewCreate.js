@@ -5,7 +5,6 @@ import { UserContext } from '../contexts/UserContext'
 import Error from '../components/Error'
 
 function ReviewCreate() {
-
     let {id} = useParams()
     id = parseInt(id)
     const {trails, setTrails} = useContext(TrailsContext)
@@ -18,14 +17,12 @@ function ReviewCreate() {
     const today = new Date()
     today.setDate(today.getDate())
     const formattedToday = today.toISOString().substring(0,10)
-
     const [inputState, setInputState] = useState({
         trailRating: "",
         date: formattedToday,
         condition: "",
         content: ""
     })
-
     const {
         trailRating,
         date,
@@ -82,8 +79,6 @@ function ReviewCreate() {
             }
         })
     }
-
-    console.log(user)
 
     if (!trail) {
         return (

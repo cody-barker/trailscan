@@ -11,6 +11,8 @@ Users can:
 - Sign up and login/logout using sessions
 - Create/edit/delete reviews for trails they've hiked
 
+<img src="public/Trailscan-GIF.gif" alt="app.gif">
+
 ## Available Scripts
 
 ## Backend

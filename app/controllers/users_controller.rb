@@ -20,6 +20,17 @@ skip_before_action :authorize, only: [:create]
         render json: user, status: :created
     end
 
+    def num_of_trails
+        user = User.find(params[:id])
+        render json: user, serializer: UserTrailSerializer
+    end
+
+    
+    def user_trail_counts
+        users = User.all
+        render json: users, each_serializer: UserTrailSerializer
+    end
+
     private
 
     def find_user

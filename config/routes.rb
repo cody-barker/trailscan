@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get '/users/:id/num_of_trails', to: 'users#num_of_trails'
+  get '/user_trail_counts', to: 'users#user_trail_counts'
   get '/short_trails/:num', to: 'trails#short_trails'
   post '/signup', to: 'users#create'
   get '/me', to: 'users#show'

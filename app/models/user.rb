@@ -7,4 +7,8 @@ class User < ApplicationRecord
     validates :username, format: {without: /\s/, message: "must contain no spaces"}
     validates :password, length: {minimum: 4, maximum: 16}
 
+    def num_of_trails
+        self.trails.count
+    end
+
 end

@@ -5,7 +5,7 @@ Trailscan is an app built for hikers. It utilizes sessions to allow users to sig
 ## Features
 
 <img src="public/Trailscan-GIF.gif" alt="app.gif">
-<a href="https://youtu.be/exQ-k43C1ZE" alt="app video">Click here for demo video of the app.</a>
+<a href="https://youtu.be/exQ-k43C1ZE" alt="app video">Click here for a demo video of the app.</a>
 
 Users can:
 

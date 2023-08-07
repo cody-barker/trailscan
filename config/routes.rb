@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   #some custom routes
   get '/users/:id/num_of_trails', to: 'users#num_of_trails'
   get '/user_trail_counts', to: 'users#user_trail_counts'
-  get '/short_trails/:num', to: 'trails#short_trails'
+  get '/short_trails_users/:num', to: 'trails#short_trails_users'
 
   # Routing logic: fallback requests for React Router.
   # Leave this here to help deploy your app later!

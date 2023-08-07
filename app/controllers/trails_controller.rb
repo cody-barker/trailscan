@@ -10,7 +10,7 @@ class TrailsController < ApplicationController
         render json: trail, status: :created
     end
 
-    def short_trails
+    def short_trails_users
         trails = Trail.all.where("length < ?", params[:num])
         if trails.any?
             users = trails.map { |trail| trail.users}

@@ -5,11 +5,12 @@ import { UserContext } from '../contexts/UserContext'
 import Error from '../components/Error'
 
 function ReviewCreate() {
+
     let {id} = useParams()
     id = parseInt(id)
     const {trails, setTrails} = useContext(TrailsContext)
     const {user, setUser} = useContext(UserContext)
-    const trail = trails.find((trail) => {
+    let trail = trails.find((trail) => {
         return trail.id === id
     })
     const [errors, setErrors] = useState([])
@@ -63,9 +64,13 @@ function ReviewCreate() {
                     })
                     const updatedTrails = trails.map((t) => {
                         if (t.id === id) {
+                            let avg = ((t.reviews.reduce((acc, currentValue) => acc + currentValue.trail_rating, 0)) + newReview.trail_rating)
+                            let newReviews = t.number_of_reviews + 1
                             return ({
                                 ...t,
-                                reviews: [newReview ,...t.reviews]
+                                number_of_reviews: newReviews,
+                                reviews: [newReview, ...t.reviews],
+                                average_rating: Math.round(avg/newReviews * 10)/10
                             })
                         } else {
                             return t

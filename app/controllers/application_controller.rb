@@ -4,6 +4,8 @@ class ApplicationController < ActionController::API
   rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_resp
   before_action :authorize
 
+  private
+
   def authorize
     render json: {error: "Not authorized."}, status: :unauthorized unless session[:user_id]
   end

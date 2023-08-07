@@ -7,7 +7,10 @@ function TrailsProvider({children}) {
     useEffect(() => {
         fetch("/trails")
         .then((r) => r.json())
-        .then((trails) => setTrails(trails))
+        .then((trails) => {
+            console.log(trails)
+            setTrails(trails)
+        })
       }, [])
 
     return(

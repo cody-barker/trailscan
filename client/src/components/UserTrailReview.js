@@ -35,8 +35,8 @@ function UserTrailReview({ review }) {
             ? user.trails
             : user.trails.filter((trail) => trail.id !== trail_id)
     
-          setUser((user) => ({
-            ...user,
+          setUser((prevUser) => ({
+            ...prevUser,
             trails: updatedTrails,
           }))
         })
@@ -47,8 +47,9 @@ function UserTrailReview({ review }) {
                 let newReviews = t.number_of_reviews - 1
                 return ({
                     ...t,
+                    reviews: t.reviews.filter((review) => review.id !== id),
                     number_of_reviews: newReviews,
-                    average_rating: Math.round(avg/newReviews * 10)/10
+                    average_rating: avg === 0 ? 0 : Math.round(avg/newReviews * 10)/10
                 })
             } else {
                 return t

@@ -1,10 +1,12 @@
 import { useContext } from 'react'
 import { UserContext } from '../contexts/UserContext'
+import { TrailsContext } from '../contexts/TrailsContext'
 import { NavLink } from 'react-router-dom'
 
 function UserTrailReview({ review }) {
 
     const {user, setUser} = useContext(UserContext)
+    const {trails, setTrails} = useContext(TrailsContext)
     const {
         id,
         trail_id,
@@ -37,6 +39,22 @@ function UserTrailReview({ review }) {
             ...user,
             trails: updatedTrails,
           }))
+        })
+        .then(() => {
+          const updatedTrails = trails.map((t) => {
+            if (t.id === trail_id) {
+                let avg = ((t.reviews.reduce((acc, currentValue) => acc + currentValue.trail_rating, 0)) - trail_rating)
+                let newReviews = t.number_of_reviews - 1
+                return ({
+                    ...t,
+                    number_of_reviews: newReviews,
+                    average_rating: Math.round(avg/newReviews * 10)/10
+                })
+            } else {
+                return t
+            }
+          })
+          setTrails(updatedTrails)
         })
       }
 

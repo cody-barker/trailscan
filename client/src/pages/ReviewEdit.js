@@ -76,7 +76,7 @@ function ReviewEdit() {
                             let avg = ((t.reviews.reduce((acc, currentValue) => acc + currentValue.trail_rating, 0)))
                             return {
                                 ...trail,
-                                average_rating: Math.round(avg * 10)/10
+                                average_rating: Math.round(avg/t.number_of_reviews * 10)/10
                             }
                         } else {
                             return t

@@ -1,4 +1,4 @@
-import React, {useState, useContext} from 'react'
+import { useState, useContext } from 'react'
 import Error from './Error'
 import { UserContext } from '../contexts/UserContext'
 
@@ -56,9 +56,7 @@ function LoginForm () {
                 {errors.map((err) => (
                     <Error key={err}>{err}</Error>
                 ))}
-    
         </form>
-
     )
 }
 

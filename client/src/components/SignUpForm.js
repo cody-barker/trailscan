@@ -1,6 +1,6 @@
-import React, {useState, useContext} from 'react'
+import { useState, useContext } from 'react'
 import Error from './Error'
-import {UserContext} from '../contexts/UserContext'
+import { UserContext } from '../contexts/UserContext'
 
 function SignUp() {
 

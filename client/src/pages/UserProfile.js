@@ -40,8 +40,6 @@ function UserProfile() {
                 })}
             </div>
         </div>
-
-
     )
 }
 

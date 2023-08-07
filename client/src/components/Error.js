@@ -1,6 +1,6 @@
 import React from 'react'
 
-function Error ({children}) {
+function Error ({ children }) {
     return(
         <p className="errors">{children}</p>
     )

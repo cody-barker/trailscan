@@ -16,7 +16,11 @@ class TrailsController < ApplicationController
             users = trails.map { |trail| trail.users}
             render json: users.flatten.uniq.to_json
         else
-            render json: {error: "No trails are shorter than #{params[:num]} miles long."}, status: :not_found
+            if params[:num] == "1"
+                render json: {error: "No trails are shorter than #{params[:num]} mile long."}, status: :not_found
+            else
+                render json: {error: "No trails are shorter than #{params[:num]} miles long."}, status: :not_found
+            end
         end
     end
 

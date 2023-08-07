@@ -15,7 +15,7 @@ function ReviewEdit() {
     const review = user.reviews.find((review) => {
         return review.id === id
     })
-    const trail = trails.find((trail) => {
+    let trail = trails.find((trail) => {
         return trail.id === review.trail_id
     })
     const [inputState, setInputState] = useState({
@@ -73,7 +73,11 @@ function ReviewEdit() {
                     })
                     const updatedTrails = trails.map((t) => {
                         if (t.id === trail.id) {
-                            return trail
+                            let avg = ((t.reviews.reduce((acc, currentValue) => acc + currentValue.trail_rating, 0)))
+                            return {
+                                ...trail,
+                                average_rating: Math.round(avg * 10)/10
+                            }
                         } else {
                             return t
                         }

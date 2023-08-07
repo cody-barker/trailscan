@@ -35,21 +35,21 @@ function UserTrailReview({ review }) {
             ? user.trails
             : user.trails.filter((trail) => trail.id !== trail_id)
     
-          setUser((prevUser) => ({
-            ...prevUser,
-            trails: updatedTrails,
+          setUser((user) => ({
+            ...user,
+            trails: updatedTrails
           }))
         })
         .then(() => {
           const updatedTrails = trails.map((t) => {
             if (t.id === trail_id) {
-                let avg = ((t.reviews.reduce((acc, currentValue) => acc + currentValue.trail_rating, 0)) - trail_rating)
-                let newReviews = t.number_of_reviews - 1
+                let totalReviews = ((t.reviews.reduce((acc, currentValue) => acc + currentValue.trail_rating, 0)) - trail_rating)
+                let numOfReviews = t.number_of_reviews - 1
                 return ({
                     ...t,
                     reviews: t.reviews.filter((review) => review.id !== id),
-                    number_of_reviews: newReviews,
-                    average_rating: avg === 0 ? 0 : Math.round(avg/newReviews * 10)/10
+                    number_of_reviews: numOfReviews,
+                    average_rating: totalReviews === 0 ? 0 : Math.round(totalReviews/numOfReviews * 10)/10
                 })
             } else {
                 return t

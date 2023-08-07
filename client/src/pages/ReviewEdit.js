@@ -73,10 +73,10 @@ function ReviewEdit() {
                     })
                     const updatedTrails = trails.map((t) => {
                         if (t.id === trail.id) {
-                            let avg = ((t.reviews.reduce((acc, currentValue) => acc + currentValue.trail_rating, 0)))
+                            let totalReviews = ((t.reviews.reduce((acc, currentValue) => acc + currentValue.trail_rating, 0)))
                             return {
                                 ...trail,
-                                average_rating: Math.round(avg/t.number_of_reviews * 10)/10
+                                average_rating: Math.round(totalReviews/t.number_of_reviews * 10)/10
                             }
                         } else {
                             return t

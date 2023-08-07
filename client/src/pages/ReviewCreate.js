@@ -64,13 +64,13 @@ function ReviewCreate() {
                     })
                     const updatedTrails = trails.map((t) => {
                         if (t.id === id) {
-                            let avg = ((t.reviews.reduce((acc, currentValue) => acc + currentValue.trail_rating, 0)) + newReview.trail_rating)
-                            let newReviews = t.number_of_reviews + 1
+                            let totalReviews = ((t.reviews.reduce((acc, currentValue) => acc + currentValue.trail_rating, 0)) + newReview.trail_rating)
+                            let numOfReviews = t.number_of_reviews + 1
                             return ({
                                 ...t,
-                                number_of_reviews: newReviews,
+                                number_of_reviews: numOfReviews,
                                 reviews: [newReview, ...t.reviews],
-                                average_rating: Math.round(avg/newReviews * 10)/10
+                                average_rating: Math.round(totalReviews/numOfReviews * 10)/10
                             })
                         } else {
                             return t

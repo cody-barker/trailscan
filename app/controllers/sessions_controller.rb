@@ -12,7 +12,6 @@ skip_before_action :authorize, only: [:create, :destroy]
     end
 
     def destroy
-        session[:user_id]
         session.delete(:user_id)
         render json: {}, status: :no_content
     end

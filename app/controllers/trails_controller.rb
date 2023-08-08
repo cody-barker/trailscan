@@ -24,6 +24,14 @@ class TrailsController < ApplicationController
         end
     end
 
+    def popular_trails
+        # trails = Trail.all.where("reviews > ?", params[:num])
+        # render json: trails
+        trails = Trail.all
+        spec_trails = trails.filter{|t| t.reviews.count >= params[:num].to_i}
+        render json: spec_trails
+    end
+
     private
 
     def trail_params

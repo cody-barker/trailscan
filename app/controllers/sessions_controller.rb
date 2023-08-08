@@ -12,11 +12,8 @@ skip_before_action :authorize, only: [:create, :destroy]
     end
 
     def destroy
-        if session[:user_id]
-            session.delete(:user_id)
-            render json: {}, status: :no_content
-        else
-            render json: {errors: ["Unauthorized"]}, status: :unauthorized
-        end
+        session[:user_id]
+        session.delete(:user_id)
+        render json: {}, status: :no_content
     end
 end

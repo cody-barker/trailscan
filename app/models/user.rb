@@ -4,8 +4,8 @@ class User < ApplicationRecord
     has_many :trails, through: :reviews
     validates :username, presence: true, length: {minimum: 2}
     validates :username, uniqueness: true
-    validates :username, format: {without: /\s/, message: "must contain no spaces"}
-    validates :password, length: {minimum: 4, maximum: 16}
+    validates :username, format: {without: /\s/, message: "cannot contain spaces"}
+    validates :password, length: {minimum: 4, maximum: 16}, format: {without: /\s/, message: "cannot contain spaces"}
 
     def num_of_trails
         self.trails.count

@@ -8,7 +8,6 @@ function TrailsProvider({ children }) {
         fetch("/trails")
         .then((r) => r.json())
         .then((trails) => {
-            console.log(trails)
             setTrails(trails)
         })
       }, [])

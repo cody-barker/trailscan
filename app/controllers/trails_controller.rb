@@ -1,4 +1,5 @@
 class TrailsController < ApplicationController
+    skip_before_action :authorize, only: :popular_trails
 
     def index
         trails = Trail.all
@@ -25,11 +26,12 @@ class TrailsController < ApplicationController
     end
 
     def popular_trails
-        # trails = Trail.all.where("reviews > ?", params[:num])
-        # render json: trails
-        trails = Trail.all
-        spec_trails = trails.filter{|t| t.reviews.count >= params[:num].to_i}
-        render json: spec_trails
+        trails = Trail.all.select{|t| t.reviews.count >= params[:num].to_i}
+        if trails.any?
+            render json: trails
+        else
+            render json: {error: "No trails have more than #{params[:num]} reviews."}
+        end
     end
 
     private

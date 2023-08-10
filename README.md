@@ -62,3 +62,19 @@ In development and unlicensed
 
 ## Author
 Cody Barker
+
+ #Make a custom route that takes an argument of a number. Use that number to find all trails shorter than that number. Once you have identified the trails that are shorter than that length, grab the users associated with those trails. You should render back an array of user objects. It doesn't matter if you send back associated reviews or trails with the users, that's up to you. If there are no trails that meet the length criterion send back an object with key "error" and a relevant message, including the number used in the search.
+
+    # def short_trails_users
+    #     trails = Trail.all.where("length < ?", params[:num])
+    #     if trails.any?
+    #         users = trails.map { |trail| trail.users}
+    #         render json: users.flatten.uniq.to_json
+    #     else
+    #         if params[:num] == "1"
+    #             render json: {error: "No trails are shorter than #{params[:num]} mile long."}, status: :not_found
+    #         else
+    #             render json: {error: "No trails are shorter than #{params[:num]} miles long."}, status: :not_found
+    #         end
+    #     end
+    # end

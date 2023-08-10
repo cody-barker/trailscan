@@ -20,6 +20,11 @@ class TrailsController < ApplicationController
         end
     end
 
+    def longest
+        trails = Trail.order(length: :desc).take(2)
+        render json: trails
+    end
+
     private
 
     def trail_params

@@ -78,3 +78,8 @@ Cody Barker
     #         end
     #     end
     # end
+
+
+
+    #a button when a user clicks button, we make a get request for the 5 longest trails
+    # return those on the page with the trail name and the length

@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get '/user_trail_counts', to: 'users#user_trail_counts'
   #get '/short_trails_users/:num', to: 'trails#short_trails_users'
   get '/popular_trails/:num', to: 'trails#popular_trails'
+  get '/longesttrails', to: 'trails#longest'
 
   # Routing logic: fallback requests for React Router.
   # Leave this here to help deploy your app later!

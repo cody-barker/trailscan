@@ -6,7 +6,6 @@ import { TrailsContext } from '../contexts/TrailsContext'
 function Trails() {
     const {trails} = useContext(TrailsContext)
     const {user} = useContext(UserContext)
-    const [longestTrails, setLongestTrails] = useState([])
     const today = new Date()
     const curHr = today.getHours()
     let greeting;
@@ -18,16 +17,6 @@ function Trails() {
       } else {
         greeting = 'Good evening'
       }
-
-    //might need some state to render the trail to the page after the get request
-    function handleClick() {
-        fetch('/longesttrails')
-        .then(r => r.json())
-        .then(trails => setLongestTrails(trails))
-
-    }
-
-    const longestTrailComps = longestTrails.map(trail => <li key={trail.id}>{trail.name} - {trail.length}</li>)
 
     return(
      <>
@@ -49,7 +38,6 @@ function Trails() {
         </div>
 
         <button onClick={handleClick}>Longest Trails</button>
-        {longestTrailComps}
     </>
     )
     

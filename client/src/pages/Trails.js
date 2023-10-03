@@ -36,8 +36,6 @@ function Trails() {
                 "Loading..."
             )}
         </div>
-
-        <button onClick={handleClick}>Longest Trails</button>
     </>
     )
     

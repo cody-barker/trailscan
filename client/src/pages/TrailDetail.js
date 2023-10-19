@@ -29,8 +29,8 @@ function TrailDetail() {
                 <span className="detail"><b>Difficulty:</b> {trail.difficulty}</span>
                 <span className="detail"><b>Family Friendly:</b> {trail.family_friendly}</span>
                 <span className="detail"><b>Dogs Allowed: </b>{trail.dogs_allowed}</span>
-                <p className="coordinates"><b>Trailhead Coordinates: </b>{trail.trailhead_coordinates}</p>
-                <h3>Description</h3>
+                <p className="coordinates"><b>Trailhead: </b> <a style={{color: "blue"}} href={`http://www.google.com/maps/place/${trail.trailhead_coordinates}`} target="_blank">See it on Google Maps</a></p>
+                <h4>Description</h4>
                 <p>{trail.description}</p>
             </div>
             <div className="reviews">

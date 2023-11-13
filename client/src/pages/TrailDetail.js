@@ -29,9 +29,18 @@ function TrailDetail() {
                 <span className="detail"><b>Difficulty:</b> {trail.difficulty}</span>
                 <span className="detail"><b>Family Friendly:</b> {trail.family_friendly}</span>
                 <span className="detail"><b>Dogs Allowed: </b>{trail.dogs_allowed}</span>
-                <p className="coordinates"><b>Trailhead: </b> <a style={{color: "blue"}} href={`http://www.google.com/maps/place/${trail.trailhead_coordinates}`} target="_blank">See it on Google Maps</a></p>
                 <h4>Description</h4>
                 <p>{trail.description}</p>
+                <iframe
+                    width="600"
+                    height="450"
+                    style={{border:0}}
+                    loading="lazy"
+                    allowFullScreen
+                    referrerPolicy="no-referrer-when-downgrade"
+                    src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyB890NOdW9qE6TRyZ8sZGbno1ekwzdZaZ8
+                        &q=${trail.trailhead_coordinates}`}>
+                </iframe>
             </div>
             <div className="reviews">
                 <h3>Reviews</h3>

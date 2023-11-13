@@ -306,3 +306,8 @@ span.detail {
   color: #282c34;
 }
 
+iframe {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+

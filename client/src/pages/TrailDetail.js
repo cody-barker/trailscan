@@ -38,8 +38,8 @@ function TrailDetail() {
                     loading="lazy"
                     allowFullScreen
                     referrerPolicy="no-referrer-when-downgrade"
-                    src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyB890NOdW9qE6TRyZ8sZGbno1ekwzdZaZ8
-                        &q=${trail.trailhead_coordinates}`}>
+                    src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyC97JxmBrPGPb6Pl2DWTcmsvUEIg_I4pkM
+                        &q=${trail.trailhead_coordinates}&zoom=5`}>
                 </iframe>
             </div>
             <div className="reviews">

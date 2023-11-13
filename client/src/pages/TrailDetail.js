@@ -39,7 +39,7 @@ function TrailDetail() {
                     allowFullScreen
                     referrerPolicy="no-referrer-when-downgrade"
                     src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyC97JxmBrPGPb6Pl2DWTcmsvUEIg_I4pkM
-                        &q=${trail.trailhead_coordinates}&zoom=15`}>
+                        &q=${trail.trailhead_coordinates}&zoom=13`}>
                 </iframe>
             </div>
             <div className="reviews">

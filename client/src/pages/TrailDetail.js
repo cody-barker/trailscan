@@ -2,7 +2,7 @@ import { useParams, NavLink } from 'react-router-dom'
 import { useContext } from 'react'
 import TrailReview from '../components/TrailReview'
 import { TrailsContext } from '../contexts/TrailsContext'
-import { API_KEY } from '../secrets.js'
+import { API_KEY } from '../secret.js'
 
 
 function TrailDetail() {

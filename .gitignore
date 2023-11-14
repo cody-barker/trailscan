@@ -31,4 +31,4 @@
 /config/master.key
 
 # Ignore the secrets file with API_KEY
-/client/src/secrets.txt
+/client/src/secrets.js

@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react'
+import { useContext } from 'react'
 import TrailCard from '../components/TrailCard'
 import { UserContext } from '../contexts/UserContext'
 import { TrailsContext } from '../contexts/TrailsContext'

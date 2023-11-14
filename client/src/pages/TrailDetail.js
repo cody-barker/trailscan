@@ -2,6 +2,7 @@ import { useParams, NavLink } from 'react-router-dom'
 import { useContext } from 'react'
 import TrailReview from '../components/TrailReview'
 import { TrailsContext } from '../contexts/TrailsContext'
+import { API_KEY } from '../secrets.js'
 
 
 function TrailDetail() {
@@ -32,13 +33,14 @@ function TrailDetail() {
                 <h4>Description</h4>
                 <p>{trail.description}</p>
                 <iframe
+                    title="trailhead-map"
                     width="600"
                     height="450"
                     style={{border:0}}
                     loading="lazy"
                     allowFullScreen
                     referrerPolicy="no-referrer-when-downgrade"
-                    src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyC97JxmBrPGPb6Pl2DWTcmsvUEIg_I4pkM
+                    src={`https://www.google.com/maps/embed/v1/place?key=${API_KEY}
                         &q=${trail.trailhead_coordinates}&zoom=13`}>
                 </iframe>
             </div>

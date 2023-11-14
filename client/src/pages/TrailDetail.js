@@ -2,8 +2,6 @@ import { useParams, NavLink } from 'react-router-dom'
 import { useContext } from 'react'
 import TrailReview from '../components/TrailReview'
 import { TrailsContext } from '../contexts/TrailsContext'
-import { API_KEY } from '../secret.js'
-
 
 function TrailDetail() {
     const {trails} = useContext(TrailsContext)
@@ -40,7 +38,7 @@ function TrailDetail() {
                     loading="lazy"
                     allowFullScreen
                     referrerPolicy="no-referrer-when-downgrade"
-                    src={`https://www.google.com/maps/embed/v1/place?key=${API_KEY}
+                    src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyC97JxmBrPGPb6Pl2DWTcmsvUEIg_I4pkM
                         &q=${trail.trailhead_coordinates}&zoom=13`}>
                 </iframe>
             </div>

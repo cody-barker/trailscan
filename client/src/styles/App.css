@@ -12,10 +12,6 @@ body {
   font-family: 'Manrope', sans-serif;
 }
 
-.App {
-  text-align: center;
-}
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -102,8 +98,7 @@ a:visited {
   border: 0px black solid;
   background-color: transparent;
   color: rgb(27, 49, 15);
-  padding: 7px;
-  margin: 7px;
+  padding: 20px;
 }
 
 

@@ -82,14 +82,31 @@ a:visited {
   color: inherit;
 }
 
-#navbar {
+/* #navbar {
   display: flex;
-  padding-left: 15px;
   border-bottom: 1px solid grey;
   height: 60px;
   align-items: center;
   object-fit: contain;
   overflow: hidden
+} */
+
+#navbar {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 8vh;
+}
+
+.logo {
+  padding: 0 10px;
+  margin: 0;
+}
+
+.logo-img {
+  width: 30px;
+  height: 30px;
+  padding: 0 10px;
 }
 
 .nav-btn {
@@ -98,7 +115,7 @@ a:visited {
   border: 0px black solid;
   background-color: transparent;
   color: rgb(27, 49, 15);
-  padding: 20px;
+  padding: 4px 10px;
 }
 
 
@@ -214,16 +231,6 @@ span.detail {
   margin-right: auto;
 }
 
-.logo {
-  margin-right: 20px;
-}
-
-.logo-img {
-  width: 30px;
-  height: auto;
-  margin-right: 5px;
-}
-
 .profile-photo {
   margin-top: 10px;
   width: 200px;
@@ -264,10 +271,6 @@ span.detail {
 .green-btn:hover {
   background-color:rgb(23, 71, 23);
   transition-duration: 0.5s;
-}
-
-.split {
-  font-weight: bold;
 }
 
 .trail-page-container {

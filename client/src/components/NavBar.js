@@ -25,7 +25,7 @@ function NavBar() {
             <NavLink to="/"><img className="logo-img" src="https://i.imgur.com/h8odfzA.png" alt="logo"></img></NavLink>
             <NavLink to="/"><h2 className="logo">TrailScan</h2></NavLink>      
             <NavLink className="nav-btn" to="/trails">New Trail</NavLink>
-            <NavLink className="split" to={`/user/${id}/reviews`}>Profile</NavLink>
+            <NavLink className="nav-btn" to={`/user/${id}/reviews`}>Profile</NavLink>
             <NavLink onClick={handleLogout} className="nav-btn" to="/">Logout</NavLink>
         </nav>
     )

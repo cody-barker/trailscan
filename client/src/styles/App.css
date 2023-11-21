@@ -200,18 +200,8 @@ label {
   color: red;
 }
 
-.trail-details-container {
-  margin-bottom: 30px;
-  margin-left: auto;
-  margin-right: auto;
-  border: 1px solid black;
-  width: 800px;
-  padding: 10px;
-}
-
 span.detail {
-  margin: 20px;
-  padding: 10px;
+  padding: 20px;
 }
 
 .reviews {
@@ -285,6 +275,15 @@ span.detail {
   align-items: center;
   flex-direction: column;
   width: 100%;
+}
+
+.trail-details-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  border: 1px solid black;
+  padding: 10px;
 }
 .trail-page-container p {
   display: flex;

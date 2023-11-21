@@ -28,8 +28,10 @@ function TrailDetail() {
                 <span className="detail"><b>Difficulty:</b> {trail.difficulty}</span>
                 <span className="detail"><b>Family Friendly:</b> {trail.family_friendly}</span>
                 <span className="detail"><b>Dogs Allowed: </b>{trail.dogs_allowed}</span>
-                <h4>Description</h4>
-                <p>{trail.description}</p>
+            </div>
+            <div>
+            <h4>Description</h4>
+            <p>{trail.description}</p>
                 <iframe
                     title="trailhead-map"
                     width="600"
@@ -42,6 +44,7 @@ function TrailDetail() {
                         &q=${trail.trailhead_coordinates}&zoom=13`}>
                 </iframe>
             </div>
+    
             <div className="reviews">
                 <h3>Reviews</h3>
                 <NavLink to={`/trails/${id}/reviews`}>

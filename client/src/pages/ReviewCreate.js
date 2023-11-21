@@ -136,7 +136,7 @@ function ReviewCreate() {
                     onChange={onInputChange}
                     />
                 </label>
-                <button>Post</button>
+                <button className="login-btn">Post</button>
                 <div className="errors-div">
                 {errors.map((err) => (
                     <Error key={err}>{err}</Error>

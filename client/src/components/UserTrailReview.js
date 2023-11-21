@@ -69,8 +69,10 @@ function UserTrailReview({ review }) {
             <p>Rating: {trail_rating}/5</p>
             <p>Conditions: {condition}</p>
             <p>{content}</p>
-            <NavLink to={`/user/${user.id}/reviews/${id}/edit`} className="underline">Edit</NavLink>
-            <p className="underline" onClick={handleDelete}>Delete</p>
+            <div className="center-row">
+              <NavLink to={`/user/${user.id}/reviews/${id}/edit`} className="underline">Edit</NavLink>
+              <p className="underline" onClick={handleDelete}>Delete</p>
+            </div>
             <hr></hr>
         </div>
     )

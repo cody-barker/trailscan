@@ -1,3 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300&display=swap');
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+body {
+  min-height: 97vh;
+  max-width: 100vw;
+  font-family: 'Manrope', sans-serif;
+}
+
 .App {
   text-align: center;
 }
@@ -7,15 +21,8 @@
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -101,21 +108,36 @@ a:visited {
 
 
 input {
-  width: 100%;
+  font-family: 'Manrope', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   padding: 3px;
   margin: 5px;
-  box-sizing: border-box;
-  display: inline-block;
 }
 
 form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   padding: 10px;
-  width: 200px;
   color: rgb(27, 49, 15);
 }
 
+label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 .login-btn {
-  background-color: white;
+  background: rgba(0, 81, 255, 0.77);
+  color: white;
+  padding: 3px;
+  margin-top: 20px;
   border-radius: 7.5px;
   border-width: 0.5px;
   cursor: pointer;
@@ -165,6 +187,11 @@ form {
 }
 
 .errors {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 10px;
   color: red;
 }
 
@@ -248,17 +275,6 @@ span.detail {
   font-weight: bold;
 }
 
-.nav-btn-split {
-  background: transparent;
-  border-color: transparent;
-  font-weight: bold;
-  font-size: 16px;
-  color: rgb(27, 49, 15);
-  margin-left: 8px;
-  cursor: pointer;
-  padding-top: 2px;
-}
-
 .trail-page-container {
   text-align: center;
   position: relative;
@@ -299,7 +315,10 @@ span.detail {
 }
 
 .wrapper {
-  margin: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .a {

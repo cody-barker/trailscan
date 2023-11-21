@@ -26,9 +26,7 @@ function NavBar() {
             <NavLink to="/"><h2 className="logo">TrailScan</h2></NavLink>      
             <NavLink className="nav-btn" to="/trails">New Trail</NavLink>
             <NavLink className="split" to={`/user/${id}/reviews`}>Profile</NavLink>
-            <button className="nav-btn-split" onClick={handleLogout}>
-                Logout
-            </button>
+            <NavLink onClick={handleLogout} className="nav-btn" to="/">Logout</NavLink>
         </nav>
     )
 }

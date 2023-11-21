@@ -11,7 +11,6 @@ function Login () {
             {showLogin ? (
                 <>
                     <LoginForm />
-                    <hr></hr>
                     <p>
                         Don't have an account? &nbsp;
                         <button className="login-btn"
@@ -23,7 +22,6 @@ function Login () {
             ) : (
                 <>
                     <SignUpForm />
-                    <hr></hr>
                     <p>
                         Already have an account? &nbsp;
                         <button className="login-btn"

@@ -82,28 +82,21 @@ a:visited {
   color: inherit;
 }
 
-/* #navbar {
-  display: flex;
-  border-bottom: 1px solid grey;
-  height: 60px;
-  align-items: center;
-  object-fit: contain;
-  overflow: hidden
-} */
-
 #navbar {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  min-height: 8vh;
+  height: 8vh;
 }
 
 .logo {
-  padding: 0 10px;
-  margin: 0;
+  padding-right: 10px;
 }
 
 .logo-img {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
   width: 30px;
   height: 30px;
   padding: 0 10px;

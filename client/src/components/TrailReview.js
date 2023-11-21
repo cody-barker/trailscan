@@ -12,7 +12,7 @@ function TrailReview({ review }) {
     } = review
 
     return(
-        <div>
+        <div className="review">
             <h4>{username}</h4>
             <img className="user-thumbnail" src={profile_image} alt="profile"></img>
             <p>{formatted_date}</p>

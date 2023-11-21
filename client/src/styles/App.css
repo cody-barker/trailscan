@@ -215,13 +215,24 @@ span.detail {
 }
 
 .reviews {
-  margin-left: 50px;
-  margin-right: 60px;
-  width: 800px;
-  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.review {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: auto;
+  width: 300px;
   border: 1px solid black;
-  margin-left: auto;
-  margin-right: auto;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 5px;
+  text-wrap: wrap;
 }
 
 .profile-photo {
@@ -269,8 +280,26 @@ span.detail {
 }
 
 .trail-page-container {
-  text-align: center;
-  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+.trail-page-container p {
+  display: flex;
+  justify-content: center;
+}
+
+.trail-page-container h4 {
+  display: flex;
+  justify-content: center;
+}
+
+.trail-page-container iframe {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .coordinates {

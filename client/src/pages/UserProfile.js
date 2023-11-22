@@ -25,7 +25,7 @@ function UserProfile() {
             </div>
             <hr></hr>
             <h3>Trails Hiked</h3>
-            <div>
+            <div className="center">
                 {(uniqTrailNames.map((name) => {
                     return <p key={name}>{name}</p>
                 }))}
@@ -34,9 +34,11 @@ function UserProfile() {
             <div>
                 <h3>Reviews</h3>
                 <hr></hr>
-                {user.reviews.sort((a,b) => (a.date < b.date) ? 1 : -1).map((review) => {
-                    return <UserTrailReview key={review.id} review={review}/>
-                })}
+                <div className="center">
+                    {user.reviews.sort((a,b) => (a.date < b.date) ? 1 : -1).map((review) => {
+                        return <UserTrailReview key={review.id} review={review}/>
+                    })}
+                </div>
             </div>
         </div>
     )

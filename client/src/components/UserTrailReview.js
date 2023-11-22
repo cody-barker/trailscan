@@ -60,7 +60,7 @@ function UserTrailReview({ review }) {
       }
 
     return(
-        <div>
+        <div className="review">
             <NavLink to={`/trails/${trail_id}`}>
                 <h4 className="review-title">{trailname}</h4>
                 <img className="review-thumbnail" src={review.trail_photo} alt="trail"></img>
@@ -70,8 +70,8 @@ function UserTrailReview({ review }) {
             <p>Conditions: {condition}</p>
             <p>{content}</p>
             <div className="center-row">
-              <NavLink to={`/user/${user.id}/reviews/${id}/edit`} className="underline">Edit</NavLink>
-              <p className="underline" onClick={handleDelete}>Delete</p>
+              <NavLink to={`/user/${user.id}/reviews/${id}/edit`} className="login-btn twelvepx">Edit</NavLink>
+              <button className="login-btn twelvepx" onClick={handleDelete}>Delete</button>
             </div>
             <hr></hr>
         </div>

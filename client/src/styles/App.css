@@ -149,6 +149,10 @@ label {
   cursor: pointer;
 }
 
+.login-btn:visited {
+  color: white;
+}
+
 #header-photo{
   width: 100%;
   height: 320px;
@@ -226,6 +230,11 @@ span.detail {
   text-wrap: wrap;
 }
 
+.review h4 {
+  margin: 0px;
+  padding: 2px;
+}
+
 .profile-photo {
   margin-top: 10px;
   width: 200px;
@@ -278,6 +287,7 @@ span.detail {
   border: 1px solid black;
   padding: 10px;
 }
+
 .trail-page-container p {
   display: flex;
   justify-content: center;
@@ -288,11 +298,14 @@ span.detail {
   justify-content: center;
 }
 
-.trail-page-container iframe {
+.trail-map-container {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  max-width: 800px;
 }
+
 
 .coordinates {
   margin: 15px;
@@ -354,3 +367,14 @@ iframe {
   padding: 5px;
 }
 
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.twelvepx {
+  font-size: 12px;
+  margin: 2px;
+}

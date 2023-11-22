@@ -29,7 +29,7 @@ function TrailDetail() {
                 <span className="detail"><b>Family Friendly:</b> {trail.family_friendly}</span>
                 <span className="detail"><b>Dogs Allowed: </b>{trail.dogs_allowed}</span>
             </div>
-            <div>
+            <div className="trail-map-container">
             <h4>Description</h4>
             <p>{trail.description}</p>
                 <iframe
@@ -50,7 +50,6 @@ function TrailDetail() {
                 <NavLink to={`/trails/${id}/reviews`}>
                     <button className="green-btn">Write Review</button>
                 </NavLink>
-                <hr></hr>
                 {trail ? (
                     trail.reviews.sort((a,b) => (a.date < b.date) ? 1 : -1).map((review) => {
                         return <TrailReview key={review.id} review={review}/>

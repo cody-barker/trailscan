@@ -18,12 +18,12 @@ function UserProfile() {
 
     return(
         <div className="profile-container">
-            <div className="border-bottom">
+            <div>
                 <img className="profile-photo" src={profile_image} alt="profile"></img>
                 <h3>{username}</h3>
                 <p>{city}, {state}</p>
             </div>
-            <div className="border-bottom">
+            <div className="border-box">
                 <h3>Trails Hiked</h3>
                 <div className="center">
                     {(uniqTrailNames.map((name) => {
@@ -32,7 +32,7 @@ function UserProfile() {
                 </div>
             </div>
             <div>
-                <h3 className="border-bottom">Reviews</h3>
+                <h3>Reviews</h3>
                 <div className="center">
                     {user.reviews.sort((a,b) => (a.date < b.date) ? 1 : -1).map((review) => {
                         return <UserTrailReview key={review.id} review={review}/>

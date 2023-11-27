@@ -18,22 +18,21 @@ function UserProfile() {
 
     return(
         <div className="profile-container">
-            <div>
+            <div className="border-bottom">
                 <img className="profile-photo" src={profile_image} alt="profile"></img>
                 <h3>{username}</h3>
                 <p>{city}, {state}</p>
             </div>
-            <hr></hr>
-            <h3>Trails Hiked</h3>
-            <div className="center">
-                {(uniqTrailNames.map((name) => {
-                    return <p key={name}>{name}</p>
-                }))}
+            <div className="border-bottom">
+                <h3>Trails Hiked</h3>
+                <div className="center">
+                    {(uniqTrailNames.map((name) => {
+                        return <p key={name}>{name}</p>
+                    }))}
+                </div>
             </div>
-            <hr></hr>
             <div>
-                <h3>Reviews</h3>
-                <hr></hr>
+                <h3 className="border-bottom">Reviews</h3>
                 <div className="center">
                     {user.reviews.sort((a,b) => (a.date < b.date) ? 1 : -1).map((review) => {
                         return <UserTrailReview key={review.id} review={review}/>

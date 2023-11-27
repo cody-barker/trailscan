@@ -19,7 +19,6 @@ function TrailReview({ review }) {
             <p>Rating: {trail_rating}/5</p>
             <p>Conditions: {condition}</p>
             <p>{content}</p>
-            <hr></hr>
         </div>
     )
 }

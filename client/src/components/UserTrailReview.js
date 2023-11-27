@@ -73,7 +73,6 @@ function UserTrailReview({ review }) {
               <NavLink to={`/user/${user.id}/reviews/${id}/edit`} className="login-btn twelvepx">Edit</NavLink>
               <button className="login-btn twelvepx" onClick={handleDelete}>Delete</button>
             </div>
-            <hr></hr>
         </div>
     )
 }

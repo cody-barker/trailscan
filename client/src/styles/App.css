@@ -144,9 +144,10 @@ label {
   color: white;
   padding: 5px;
   margin-top: 15px;
+  border: 1px solid black;
   border-radius: 7.5px;
-  border-width: 0.5px;
   cursor: pointer;
+  height: auto;
 }
 
 .login-btn:visited {

@@ -71,7 +71,7 @@ function UserTrailReview({ review }) {
             <p>{content}</p>
             <div className="center-row">
               <NavLink to={`/user/${user.id}/reviews/${id}/edit`} className="login-btn twelvepx">Edit</NavLink>
-              <button className="login-btn twelvepx" onClick={handleDelete}>Delete</button>
+              <NavLink className="login-btn twelvepx" onClick={handleDelete}>Delete</NavLink>
             </div>
         </div>
     )

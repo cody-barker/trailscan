@@ -328,10 +328,15 @@ span.detail {
   position: relative;
   margin-left: auto;
   margin-right: auto;
-  border: 1px solid black;
 }
 
 .border-bottom{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-left: 30%;
+  margin-right: 30%;
   border-bottom: 1px solid black;
   padding: 10px;
 }

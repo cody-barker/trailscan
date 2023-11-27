@@ -347,6 +347,7 @@ span.detail {
 }
 
 .wrapper {
+  min-height: 98vh;
   display: flex;
   justify-content: center;
   align-items: center;

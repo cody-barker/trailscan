@@ -32,25 +32,6 @@ body {
   color: white;
 }
 
-.trail__img {
-  width: 18.75em;
-  height: 12.5em;
-  object-fit: cover;
-  border-radius: 15px;
-}
-
-.trail-card {
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  color: rgb(27, 49, 15);
-  margin: 1em;
-}
-
-.trail-card--top-line {
-  margin-top: 0.5em;
-}
-
 p {
   margin: 0px;
   padding: 0px;
@@ -75,7 +56,27 @@ h3 {
 .cards {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.trail__img {
+  min-width: 20em;
+  max-height: 14em;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.trail-card {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  color: rgb(27, 49, 15);
+  margin: 0.5em;
+}
+
+.trail-card--top-line {
+  margin-top: 0.5em;
 }
 
 #star {

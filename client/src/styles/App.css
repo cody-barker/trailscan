@@ -22,21 +22,7 @@ body {
   min-height: 100svh;
 }
 
-.App-header {
-  background-color: #282c34;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-img {
+.trail__img {
   width: 300px;
   height: 200px;
   object-fit: cover;

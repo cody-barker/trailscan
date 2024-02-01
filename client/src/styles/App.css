@@ -174,12 +174,10 @@ label {
 }
 
 #trail-header-photo {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  width: 800px;
-  height: 320px;
+  margin: 1em 0;
+  max-height: 320px;
   object-fit: cover;
-  border-radius: 20px;
+  border-radius: 2em;
 }
 
 .header-container {
@@ -296,9 +294,9 @@ span.detail {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: auto;
   border: 1px solid black;
-  padding: 10px;
+  flex-wrap: wrap;
+  padding: 0.25em;
 }
 
 .trail-page-container p {

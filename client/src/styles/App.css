@@ -40,13 +40,15 @@ body {
 }
 
 .trail-card {
+  display: flex;
+  flex-direction: column;
   text-align: left;
-  margin: 8px;
-  width: 20rem;
-  height: 20rem;
-  display: inline-block;
-  font-size: 14px;
   color: rgb(27, 49, 15);
+  margin: 1em;
+}
+
+.trail-card--top-line {
+  margin-top: 0.5em;
 }
 
 p {
@@ -61,13 +63,19 @@ h3 {
   margin: 0px;
 }
 
-.card-container {
-  width: 1020px;
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.title {
+  padding: 1em 0;
+}
+
+.cards {
+  display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 #star {
@@ -88,7 +96,7 @@ a:visited {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  height: 5svh;
+  min-height: 5svh;
 }
 
 .logo {

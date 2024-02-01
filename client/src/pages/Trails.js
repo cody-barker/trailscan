@@ -24,10 +24,10 @@ function Trails() {
             <img id="header-photo" src="https://i.imgur.com/zKhMjkQ.jpg" alt="half-dome"></img>
             <div className="header-text">{greeting}, {user.username}</div>
         </div>
-        <div className="card-container">
+        <div className="container title">
             <h1>Explore trails near you</h1>
         </div>
-        <div className="card-container">    
+        <div className="cards container">    
             {trails.length > 0 ? (
                 trails.map((trail) => {
                     return <TrailCard key={trail.id} trail={trail}/>

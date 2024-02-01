@@ -21,7 +21,7 @@ function NavBar() {
     }
 
     return(
-        <nav id="navbar">
+        <nav id="navbar" className="container">
             <NavLink to="/"><img className="logo-img" src="https://i.imgur.com/h8odfzA.png" alt="logo"></img></NavLink>
             <NavLink to="/"><h2 className="logo">TrailScan</h2></NavLink>      
             <NavLink className="nav-btn" to="/trails">New Trail</NavLink>

@@ -2,6 +2,7 @@
 
 * {
   box-sizing: border-box;
+  font-family: "Manrope", sans-serif;
 }
 
 h1,
@@ -18,7 +19,6 @@ ul {
 
 body {
   min-height: 100svh;
-  font-family: "Manrope", sans-serif;
 }
 
 .App-header {
@@ -149,12 +149,11 @@ label {
 .login-btn {
   background: rgba(0, 81, 255, 0.77);
   color: white;
-  padding: 5px;
+  padding: 0.5em 1.25em;
   margin-top: 15px;
   border: 1px solid black;
-  border-radius: 7.5px;
+  border-radius: 3em;
   cursor: pointer;
-  height: auto;
   box-shadow: 1.5px 1.5px 1px rgb(173, 190, 195);
 }
 

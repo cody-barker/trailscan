@@ -21,7 +21,7 @@ function Trails() {
     return(
      <>
         <div className="header-container">
-            <img id="header-photo" src="https://i.imgur.com/zKhMjkQ.jpg" alt="half-dome"></img>
+            <img loading="lazy" id="header-photo" src="https://i.imgur.com/zKhMjkQ.jpg" alt="half-dome"></img>
             <div className="header-text">{greeting}, {user.username}</div>
         </div>
         <div className="container title">

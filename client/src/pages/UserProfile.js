@@ -19,7 +19,7 @@ function UserProfile() {
     return(
         <div className="profile-container">
             <div>
-                <img className="profile-photo" src={profile_image} alt="profile"></img>
+                <img loading="lazy" className="profile-photo" src={profile_image} alt="profile"></img>
                 <h3>{username}</h3>
                 <p>{city}, {state}</p>
             </div>

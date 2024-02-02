@@ -18,6 +18,7 @@ function TrailDetail() {
         <div className="header-container">
           <div className="header-container">
             <img
+              loading="lazy"
               id="trail-header-photo"
               src={trail.photo}
               alt={trail.name}

@@ -10,6 +10,7 @@ import UserProfile from "../pages/UserProfile";
 import ReviewEdit from "../pages/ReviewEdit";
 import ReviewCreate from "../pages/ReviewCreate";
 import TrailCreate from "../pages/TrailCreate";
+import Footer from "../components/Footer"
 import "../styles/App.css";
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
           <Route path="/" element={<Trails />} />
         </Routes>
       </main>
+      <Footer />
     </TrailsProvider>
   );
 }

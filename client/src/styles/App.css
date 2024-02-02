@@ -436,6 +436,20 @@ iframe {
   align-items: center;
 }
 
+.footer__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 600px;
+  min-height: 6svh;
+  margin: 1em auto;
+}
+
+footer {
+  border-top: 1px solid black;
+  margin-top: 2em;
+}
+
 @media (max-width: 500px) {
   .trail-header-text {
     font-size: 2rem;

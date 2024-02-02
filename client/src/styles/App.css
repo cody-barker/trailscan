@@ -65,7 +65,7 @@ h3 {
 }
 
 .trail__img {
-  min-width: 20em;
+  width: 20em;
   max-height: 14em;
   object-fit: cover;
   border-radius: 15px;

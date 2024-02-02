@@ -176,6 +176,7 @@ label {
 #trail-header-photo {
   margin: 1em 0;
   max-height: 320px;
+  min-width: 80%;
   object-fit: cover;
   border-radius: 2em;
 }
@@ -262,7 +263,7 @@ span.detail {
 
 .review-text-box {
   height: 300px;
-  width: 500px;
+  max-width: 500px;
 }
 
 .green-btn {
@@ -288,6 +289,7 @@ span.detail {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  margin: 1em;
 }
 
 .trail-details-container {
@@ -303,6 +305,7 @@ span.detail {
 .trail-page-container p {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .trail-page-container h4 {
@@ -315,8 +318,9 @@ span.detail {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  flex-wrap: wrap;
   max-width: 800px;
-  margin: 1em 0;
+  margin: 1em;
 }
 
 .coordinates {
@@ -347,10 +351,7 @@ span.detail {
   border-radius: 15px;
   padding: 10px;
   padding-bottom: 0px;
-  margin-left: 30%;
-  margin-right: 30%;
-  margin-top: 15px;
-  margin-bottom: 15px;
+  margin: 1em 30%;
 }
 
 .select {
@@ -379,8 +380,13 @@ span.detail {
 }
 
 iframe {
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin: 1em;
+  border: 1px solid black;
+}
+
+html pre {
+  margin: 1em;
+  padding: 1em;
 }
 
 .center-row {

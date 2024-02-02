@@ -385,7 +385,7 @@ span.detail {
 }
 
 .wrapper {
-  min-height: 100vh;
+  min-height: 100svh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -394,6 +394,13 @@ span.detail {
 
 .a {
   color: #282c34;
+}
+
+.iframe-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 iframe {

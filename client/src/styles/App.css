@@ -270,8 +270,9 @@ span.detail {
 }
 
 .review-edit-form {
+  min-height: 90svh;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
 }
 

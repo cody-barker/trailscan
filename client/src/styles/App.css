@@ -18,6 +18,14 @@ ul {
   padding: 0;
 }
 
+body {
+  min-height: 100svh;
+}
+
+main {
+  min-height: 90svh;
+}
+
 .App-header {
   background-color: #282c34;
   display: flex;
@@ -409,6 +417,15 @@ iframe {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+}
+
+.create-review-container {
+  margin: 1em;
+  height: 90svh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 @media (max-width: 500px) {

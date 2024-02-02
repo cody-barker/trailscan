@@ -92,7 +92,7 @@ function ReviewCreate() {
     }
 
     return(
-        <div>
+        <div className="create-review-container">
             <h2 className="center">{trail.name}</h2>
             <form className="review-edit-form" onSubmit={handleSubmit}>
                 <label>

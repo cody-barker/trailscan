@@ -157,7 +157,7 @@ label {
   background: rgba(0, 81, 255, 0.77);
   color: white;
   padding: 0.5em 1.25em;
-  margin-top: 15px;
+  margin: 0.5em;
   border: 1px solid black;
   border-radius: 3em;
   cursor: pointer;
@@ -166,6 +166,11 @@ label {
 
 .login-btn:visited {
   color: white;
+}
+
+.login-btn:hover {
+  opacity: 0.8;
+  transition-duration: 0.5s;
 }
 
 #header-photo {
@@ -367,8 +372,8 @@ span.detail {
 }
 
 .review-thumbnail {
-  width: 100px;
-  height: auto;
+  min-width: 7em;
+  max-height: 7em;
 }
 
 .review-title {
@@ -409,11 +414,6 @@ iframe {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-}
-
-.twelvepx {
-  font-size: 12px;
-  margin: 2px;
 }
 
 @media (max-width: 500px) {

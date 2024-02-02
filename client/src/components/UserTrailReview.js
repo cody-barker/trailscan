@@ -70,8 +70,8 @@ function UserTrailReview({ review }) {
             <p>Conditions: {condition}</p>
             <p>{content}</p>
             <div className="center-row">
-              <NavLink to={`/user/${user.id}/reviews/${id}/edit`} className="login-btn twelvepx">Edit</NavLink>
-              <NavLink className="login-btn twelvepx" onClick={handleDelete}>Delete</NavLink>
+              <NavLink to={`/user/${user.id}/reviews/${id}/edit`} className="login-btn">Edit</NavLink>
+              <NavLink className="login-btn" onClick={handleDelete}>Delete</NavLink>
             </div>
         </div>
     )

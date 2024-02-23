@@ -445,6 +445,11 @@ iframe {
   margin: 1em auto;
 }
 
+.footer--left,
+ .footer--right {
+  margin: 0 2em;
+}
+
 footer {
   border-top: 1px solid black;
   margin-top: 2em;

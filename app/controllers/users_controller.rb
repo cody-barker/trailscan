@@ -20,7 +20,6 @@ class UsersController < ApplicationController
         user = User.find(params[:id])
         render json: user, serializer: UserTrailSerializer
     end
-
     
     def user_trail_counts
         users = User.all

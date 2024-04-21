@@ -3,4 +3,4 @@ class TrailSerializer < ActiveModel::Serializer
 
   has_many :reviews
   has_many :users
-  end
+end

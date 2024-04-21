@@ -364,7 +364,7 @@ span.detail {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  border: 1px solid black;
+  border: 2px solid black;
   border-radius: 1em;
   padding: 0.75em;
   max-width: 18em;
@@ -446,7 +446,7 @@ iframe {
 }
 
 .footer--left,
- .footer--right {
+.footer--right {
   margin: 0 2em;
 }
 
